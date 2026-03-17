@@ -56,7 +56,8 @@ body {
 
 /* Header & Navigation */
 header {
-    background: var(--medium-brown);
+    background: url('img/indonesie-foret.jpg');
+    background-size: cover;
     color: white;
     padding: var(--spacing-lg) 0;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
@@ -143,9 +144,51 @@ nav a:hover, nav a.active {
 
 /* Main Container */
 .container {
-    max-width: 1000px;
-    margin: var(--spacing-lg) auto;
-    padding: 0 var(--spacing-lg);
+    width: 100%;
+    margin: 0;
+    padding: var(--spacing-xl);
+}
+
+/* Intro Section */
+.intro-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    padding: var(--spacing-xl);
+    align-items: center;
+    /*background: linear-gradient(135deg, rgba(107, 142, 35, 0.05), rgba(166, 147, 124, 0.05));*/
+}
+
+.intro-card {
+    padding: var(--spacing-lg);
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-left: 5px solid var(--accent-green);
+}
+
+.intro-card h1 {
+    color: var(--dark-burgundy);
+    border-bottom: 3px solid var(--light-brown);
+    padding-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.intro-card h2 {
+    color: var(--accent-green);
+    margin-top: 0;
+}
+
+.intro-image {
+    width: 100%;
+    height: auto;
+}
+
+/* Container Full Width */
+.container-full {
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 /* Sections */
@@ -420,6 +463,16 @@ footer {
     padding: var(--spacing-lg);
     margin-top: var(--spacing-xl);
     border-top: 3px solid var(--light-brown);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+footer p {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 footer a {
@@ -456,6 +509,12 @@ footer a:hover {
 
 /* Responsive */
 @media (max-width: 768px) {
+    .intro-section {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: var(--spacing-lg);
+    }
+
     .logo-section {
         flex-wrap: wrap;
         gap: 1rem;
