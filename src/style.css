@@ -1,7 +1,15 @@
+/* ========== RESET & VARIABLES ========== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
 :root {
@@ -54,7 +62,38 @@ body {
     line-height: var(--line-height-normal);
 }
 
-/* Header & Navigation */
+/* ========== TYPOGRAPHY ========== */
+h1 {
+    font-family: 'Fraunces', serif;
+    font-size: var(--font-size-2xl);
+    color: var(--dark-burgundy);
+    margin-bottom: var(--spacing-md);
+    border-bottom: 3px solid var(--light-brown);
+    padding-bottom: var(--spacing-sm);
+}
+
+h2 {
+    font-family: 'Fraunces', serif;
+    font-size: var(--font-size-xl);
+    color: var(--medium-brown);
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-sm);
+}
+
+h3 {
+    font-family: 'Fraunces', serif;
+    font-size: var(--font-size-lg);
+    color: var(--taupe);
+    margin-top: var(--spacing-md);
+    margin-bottom: var(--spacing-xs);
+}
+
+p {
+    margin-bottom: var(--spacing-sm);
+    text-align: justify;
+}
+
+/* ========== HEADER & NAVIGATION ========== */
 header {
     background: url('img/indonesie-foret.jpg');
     background-size: cover;
@@ -65,6 +104,9 @@ header {
     top: 0;
     z-index: 100;
     width: 100%;
+    box-sizing: border-box;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .header-container {
@@ -142,21 +184,26 @@ nav a:hover, nav a.active {
     color: var(--dark-brown);
 }
 
-/* Main Container */
+/* ========== MAIN CONTAINERS ========== */
 .container {
     width: 100%;
     margin: 0;
     padding: var(--spacing-xl);
 }
 
-/* Intro Section */
+.container-full {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* ========== INTRO SECTION ========== */
 .intro-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
     padding: var(--spacing-xl);
     align-items: center;
-    /*background: linear-gradient(135deg, rgba(107, 142, 35, 0.05), rgba(166, 147, 124, 0.05));*/
 }
 
 .intro-card {
@@ -184,24 +231,7 @@ nav a:hover, nav a.active {
     height: auto;
 }
 
-/* Container Full Width */
-.container-full {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-/* Sections */
-section {
-    display: none;
-    animation: fadeIn 0.5s ease;
-}
-
-section.active {
-    display: block;
-}
-
-/* Sections */
+/* ========== SECTIONS & ANIMATIONS ========== */
 section {
     display: none;
     animation: fadeIn 0.5s ease;
@@ -216,38 +246,16 @@ section.active {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Typography */
-h1 {
-    font-family: 'Fraunces', serif;
-    font-size: var(--font-size-2xl);
-    color: var(--dark-burgundy);
-    margin-bottom: var(--spacing-md);
-    border-bottom: 3px solid var(--light-brown);
-    padding-bottom: var(--spacing-sm);
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
 }
 
-h2 {
-    font-family: 'Fraunces', serif;
-    font-size: var(--font-size-xl);
-    color: var(--medium-brown);
-    margin-top: var(--spacing-lg);
-    margin-bottom: var(--spacing-sm);
-}
-
-h3 {
-    font-family: 'Fraunces', serif;
-    font-size: var(--font-size-lg);
-    color: var(--taupe);
-    margin-top: var(--spacing-md);
-    margin-bottom: var(--spacing-xs);
-}
-
-p {
-    margin-bottom: var(--spacing-sm);
-    text-align: justify;
-}
-
-/* Accueil */
+/* ========== HERO SECTION ========== */
 .hero {
     background: var(--dark-brown);
     color: white;
@@ -270,20 +278,9 @@ p {
     margin-bottom: var(--spacing-md);
 }
 
-.podcast-container {
-    margin-top: var(--spacing-lg);
-    padding: var(--spacing-md);
-    background: rgba(255,255,255,0.1);
-    border-radius: var(--radius-lg);
-    border-left: 4px solid var(--light-brown);
-}
 
-.podcast-container h3 {
-    color: white;
-    margin-top: 0;
-}
 
-/* Cards */
+/* ========== CARDS ========== */
 .card {
     background: white;
     padding: var(--spacing-lg);
@@ -311,7 +308,7 @@ p {
     box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
-/* Timeline */
+/* ========== TIMELINE ========== */
 .timeline {
     margin: var(--spacing-lg) 0;
     padding-left: var(--spacing-lg);
@@ -341,7 +338,54 @@ p {
     margin-bottom: var(--spacing-xs);
 }
 
-/* Padlet Section */
+/* ========== PROBLEM STATEMENT ========== */
+.problematic {
+    background-color: #f5f1ed;
+    background-image: 
+        linear-gradient(135deg, rgba(89, 40, 51, 0.1), rgba(217, 181, 137, 0.1)),
+        repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(89, 56, 40, 0.03) 35px, rgba(89, 56, 40, 0.03) 70px),
+        repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(217, 181, 137, 0.02) 35px, rgba(217, 181, 137, 0.02) 70px);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    border: 2px dashed var(--dark-burgundy);
+    margin: var(--spacing-lg) 0;
+    position: relative;
+}
+
+.problematic::before {
+    content: '';
+    position: absolute;
+    left: -60px;
+    top: 20%;
+    width: 100px;
+    height: 100px;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><ellipse cx="50" cy="50" rx="25" ry="35" fill="%23593825" opacity="0.4"/><ellipse cx="50" cy="35" rx="22" ry="28" fill="%23A6937C" opacity="0.3"/><path d="M 35 50 Q 50 45 65 50" stroke="%23260801" stroke-width="1.5" fill="none" opacity="0.3"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.problematic::after {
+    content: '';
+    position: absolute;
+    right: -60px;
+    bottom: 15%;
+    width: 100px;
+    height: 100px;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><ellipse cx="50" cy="50" rx="25" ry="35" fill="%23A6937C" opacity="0.4"/><ellipse cx="50" cy="35" rx="22" ry="28" fill="%23593825" opacity="0.3"/><path d="M 35 50 Q 50 45 65 50" stroke="%23260801" stroke-width="1.5" fill="none" opacity="0.3"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.problematic > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* ========== PADLET SECTION ========== */
 .padlet-section {
     background: linear-gradient(135deg, rgba(107, 142, 35, 0.05), rgba(184, 134, 11, 0.05));
     padding: var(--spacing-lg);
@@ -361,7 +405,7 @@ p {
     border-radius: var(--radius-md);
 }
 
-/* Interview/Citation Box */
+/* ========== QUOTES ========== */
 .quote-box {
     background: linear-gradient(135deg, rgba(166, 147, 124, 0.1), rgba(217, 181, 137, 0.1));
     border-left: 5px solid var(--dark-burgundy);
@@ -378,7 +422,7 @@ p {
     font-style: normal;
 }
 
-/* Glossaire */
+/* ========== GLOSSAIRE ========== */
 .glossary-term {
     background: white;
     padding: var(--spacing-md);
@@ -410,7 +454,7 @@ p {
     color: var(--text-dark);
 }
 
-/* Bibliographie */
+/* ========== BIBLIOGRAPHIE ========== */
 .bibliography-item {
     background: white;
     padding: var(--spacing-md);
@@ -441,7 +485,7 @@ p {
     text-decoration: underline;
 }
 
-/* About */
+/* ========== ABOUT / TEAM ========== */
 .team-member {
     background: white;
     padding: var(--spacing-md);
@@ -455,7 +499,18 @@ p {
     margin-top: 0;
 }
 
-/* Footer */
+/* ========== MAP SECTION ========== */
+.map-container {
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    margin: var(--spacing-lg) 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+
+
+/* ========== FOOTER ========== */
 footer {
     background: var(--medium-brown);
     color: white;
@@ -484,30 +539,7 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* World Map Section */
-.map-container {
-    background: white;
-    padding: var(--spacing-lg);
-    border-radius: var(--radius-lg);
-    margin: var(--spacing-lg) 0;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-/* Problem Statement */
-.problematic {
-    background: linear-gradient(135deg, rgba(89, 40, 51, 0.1), rgba(217, 181, 137, 0.1));
-    padding: var(--spacing-lg);
-    border-radius: var(--radius-lg);
-    border: 2px dashed var(--dark-burgundy);
-    margin: var(--spacing-lg) 0;
-}
-
-.problematic h2 {
-    color: var(--dark-burgundy);
-    margin-top: 0;
-}
-
-/* Responsive */
+/* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
     .intro-section {
         grid-template-columns: 1fr;
@@ -546,11 +578,13 @@ footer a:hover {
     nav {
         gap: 0.5rem;
         flex-direction: column;
+        padding: 0 var(--spacing-sm);
     }
 
     nav a {
         padding: 0.4rem 0.8rem;
         font-size: 0.9rem;
+        margin: 0 var(--spacing-xs);
     }
 
     .hero h1 {

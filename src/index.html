@@ -6,16 +6,15 @@
     <title>Kopi Luwak - Les Civettes et la Controverse du Café</title>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="index.css">
+    <script src="chart.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
 </head>
 <body>
     <header>
         <div class="header-container">
             <div class="logo-section">
-                <div class="logo-left">
-                </div>
-                <div class="logo">Le café Kopi<span> Luwak</span></div>
-                <div class="logo-right">
+                <div class="logo">Les civettes et le café<span> Kopi Luwak</span></div>
                 </div>
             </div>
             <nav>
@@ -31,65 +30,94 @@
 
 
     <div class="container">
+
         <!-- INTRODUCTION CARD -->
         <div class="intro-section">
             <div class="intro-card">
-                <h1>Introduction</h1>
-                <h3 style="color: var(--accent-green);">Une controverse entre commerce, éthique et bien-être animal</h3>
-                <div style="background: rgba(166, 147, 124, 0.1); padding: 1.5rem; border-radius: 8px; margin-top: 1.5rem;">
-                    <h3 style="margin-top: 0; color: var(--medium-brown);">Pourquoi ce site ?</h3>
-                    <p>Le Kopi Luwak représente bien plus qu'un simple café luxueux. C'est une controverse complexe qui soulève des questions fondamentales sur l'éthique, l'exploitation animale, l'économie et la durabilité environnementale.</p>
-                    <p>Face aux multiples perspectives et à la confusion qui règne autour de ce produit, nous avons créé ce site pour :</p>
-                    <ul style="margin-left: 2rem; margin-top: 1rem;">
+                <h1>Préface</h1>
+                <div class="intro-card-inner">
+                    <h3>Pourquoi ce site ?</h3>
+                    <p>Le Kopi Luwak représente bien plus qu'un simple café luxueux...</p>
+                    <p>Face aux multiples perspectives...</p>
+                    <ul>
                         <li>Présenter les faits de manière équilibrée et documentée</li>
-                        <li>Donner voix aux différents acteurs : producteurs, défenseurs des animaux, scientifiques, consommateurs</li>
+                        <li>Donner voix aux différents acteurs...</li>
                         <li>Éclairer les enjeux éthiques et environnementaux</li>
-                        <li>Encourager une réflexion critique sur la consommation responsable</li>
+                        <li>Encourager une réflexion critique...</li>
                     </ul>
                 </div>
             </div>
             <div class="intro-image">
-                <img src="/img/civette-nature.jpg" alt="Civette en forêt" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
-                <p><i>Civette dans la nature de : Manfred Antranias</i></p>
+                <img src="/img/civette-nature.jpg" alt="Civette en forêt">
+                <p>Civette dans la nature de : Manfred Antranias</p>
             </div>
         </div>
 
+        <!--Feuilles de décoration-->
+        <div class="leaf-decoration leaf-left"></div>
+        <div class="leaf-decoration leaf-right"></div>
+
+        <!--Problématique-->
         <div class="problematic">
             <h2>La Problématique</h2>
             <p><strong>Comment concilier le prestige et le commerce lucratif du café Kopi Luwak avec le bien-être animal et l'impact environnemental de son exploitation ?</strong></p>
             <p>Le Kopi Luwak, produit à partir de grains de café digérés par des civettes, soulève des questions fondamentales sur l'éthique, la durabilité et l'authenticité dans l'industrie du luxe. Cette controverse oppose les intérêts économiques, le bien-être animal et la conscience environnementale.</p>
         </div>
 
+        <!--Section Vidéo BBC-->
+        <div class="intro-section">
+            <video width="100%" height="400" controls>
+                <source src="/video/video.mp4" type="video/mp4">
+            </video>
 
-        <div class="podcast-container">
-            <h3>Podcast Thématique</h3>
-            <p>Écoutez notre analyse complète de cette controverse fascinante :</p>
-            <audio controls style="width: 100%; margin-top: 1rem;">
-                <source src="#" type="audio/mpeg">
-                Votre navigateur ne supporte pas la lecture audio.
-            </audio>
-            <p style="margin-top: 1rem; font-size: 0.95rem; color: var(--text-dark);">
-                <em>Podcast en cours de création - Bientôt disponible</em>
-            </p>
+            <div class="card">
+                <h2>Pour mieux comprendre :</h2>
+                <hr>
+                <p>Voici un reportage de la BBC par Chris Rogers en 2013.
+                    Ce reportage nous montre clairement les enjeux et les conditions de vie des civettes
+                </p>
+            </div>
         </div>
 
-        <div style="margin-top: 3rem; padding: 2rem; background: rgba(107, 142, 35, 0.05); border-radius: 8px;">
-            <h3 style="margin-top: 0; color: var(--accent-green);">Explorez la controverse</h3>
+
+        <!-- Graphique comparaison prix -->
+        <div class="price-comparison-section">
+            <h2>Comparaison des Prix du Café</h2>
+            <p>Découvrez comment le Kopi Luwak se positionne par rapport aux autres cafés du marché.</p>
+            <canvas id="priceChart"></canvas>
+            <p><i>Le prix du Kopi Luwak varie entre 200 et 400€</i></p>
+        </div>
+
+        <!--Flèche-->
+        <div class="arrow-down">
+            <a href="#podcast" class="arrow-down-link">↓</a>
+        </div>
+
+        <!--Podcast-->
+        <div class="podcast-container" id="podcast">
+            <h3>Podcast Thématique</h3>
+            <p>Afin de connaître notre analyse complète de cette controverse :</p>
+            <a href="podcast.html" class="podcast-btn">Cliquez pour écouter le Podcast</a>
+        </div>
+
+
+        <!--Explore section-->
+        <div class="explore-section">
+            <h3>Explorez la controverse</h3>
             <p>Naviguez à travers notre site pour une compréhension complète :</p>
-            <ul style="margin-left: 2rem; margin-top: 1rem;">
-                <li><strong>Histoire</strong> : L'évolution de cette controverse au fil du temps avec frise chronologique</li>
-                <li><strong>Paroles de Terrain</strong> : Témoignages et interviews de différentes perspectives</li>
-                <li><strong>À Propos</strong> : Notre approche et méthodologie</li>
-                <li><strong>Glossaire</strong> : Les termes clés expliqués simplement</li>
-                <li><strong>Bibliographie</strong> : Nos sources et références académiques</li>
+            <ul>
+                <li><a href="histoire.html"><strong>Histoire</strong></a> : L'évolution de cette controverse...</li>
+                <li><a href="paroles.html"><strong>Paroles de Terrain</strong> </a>: Témoignages et interviews...</li>
+                <li><a href="apropos.html"><strong>À Propos</strong></a> : Notre approche et méthodologie</li>
+                <li><a href="glossaire.html"><strong>Glossaire</strong></a> : Les termes clés expliqués simplement</li>
+                <li><a href="bibliographie.html"><strong>Bibliographie</strong></a> : Nos sources et références académiques</li>
             </ul>
         </div>
     </div>
 
     <footer>
-        <p><strong>Kopi Luwak: Cartographie d'une Controverse</strong></p>
-        <p>Projet académique | Semestre 6 | Cartographie des Controverses</p>
-        <p style="margin-top: 1rem; font-size: 0.9rem;">© 2024 - Site créé pour explorer les multiples perspectives d'une controverse complexe</p>
+        <p><strong>Projet académique | Semestre 6 | Cartographie des Controverses</strong></p>
+        <p>© 2024 - Le marché du Kopi Luwak</p>
     </footer>
 
 </body>
