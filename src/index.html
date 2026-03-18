@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kopi Luwak - Les Civettes et la Controverse du Café</title>
+    <!--Image d'icone du site-->
+    <link rel="icon" type="image/png" href="/img/favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="index.css">
+    <script src="script.js" defer></script>
     <script src="chart.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
 </head>
+
 <body>
+
+    <!--Header & navigation-->
     <header>
         <div class="header-container">
             <div class="logo-section">
@@ -28,7 +35,7 @@
         </div>
     </header>
 
-
+    <!--Container Global-->
     <div class="container">
 
         <!-- INTRODUCTION CARD -->
@@ -37,13 +44,13 @@
                 <h1>Préface</h1>
                 <div class="intro-card-inner">
                     <h3>Pourquoi ce site ?</h3>
-                    <p>Le Kopi Luwak représente bien plus qu'un simple café luxueux...</p>
-                    <p>Face aux multiples perspectives...</p>
+                    <p>Le Kopi Luwak représente bien plus qu'un simple café luxueux, il mérite d'être analyser</p>
+                    <p><strong>Face aux multiples perspectives</strong></p>
                     <ul>
                         <li>Présenter les faits de manière équilibrée et documentée</li>
-                        <li>Donner voix aux différents acteurs...</li>
+                        <li>Donner voix aux différents acteurs</li>
                         <li>Éclairer les enjeux éthiques et environnementaux</li>
-                        <li>Encourager une réflexion critique...</li>
+                        <li>Encourager une réflexion critique</li>
                     </ul>
                 </div>
             </div>
@@ -59,9 +66,9 @@
 
         <!--Problématique-->
         <div class="problematic">
-            <h2>La Problématique</h2>
-            <p><strong>Comment concilier le prestige et le commerce lucratif du café Kopi Luwak avec le bien-être animal et l'impact environnemental de son exploitation ?</strong></p>
-            <p>Le Kopi Luwak, produit à partir de grains de café digérés par des civettes, soulève des questions fondamentales sur l'éthique, la durabilité et l'authenticité dans l'industrie du luxe. Cette controverse oppose les intérêts économiques, le bien-être animal et la conscience environnementale.</p>
+            <h2>Problématique</h2>
+            <p><strong>Jusqu'ou le marché du café peut-il justifier l'exploitation et l'enfermement des civettes dans le cadre de la filière du Kopi Luwak</strong></p>
+            <p>Cette problématique invite à analyser les conditions de production de ce café, les conséquences pour l'animal, mais aussi la responsabilité globales des acteurs jusqu'au consommateur.</p>
         </div>
 
         <!--Section Vidéo BBC-->
@@ -73,10 +80,18 @@
             <div class="card">
                 <h2>Pour mieux comprendre :</h2>
                 <hr>
-                <p>Voici un reportage de la BBC par Chris Rogers en 2013.
-                    Ce reportage nous montre clairement les enjeux et les conditions de vie des civettes
+                <p>Voici un reportage de la BBC réalisé par Chris Rogers en 2013.
+                    Ce reportage nous montre clairement les enjeux et les conditions de vie des civettes. On y apercoit différents acteurs que ce soit les gouteurs et amateurs de café, les producteur et même les vendeurs.
                 </p>
             </div>
+        </div>
+
+        <!--D'informations pour le prix du café etc-->
+        <div class="card">
+            <h2>On peut alors se demander d'ou vient ce sacré prix du café Kopi Luwak</h2>
+            <p>En effet le Kopi Luwak et son prix viennent directement de <strong>sa rareté de production.</strong> La seule façon connue ajourd'hui est par la digestion des civettes.
+                <br>Vous pourrez voir si dessous un graphique avec les comparaisons des prix des cafés qui vont vous permettre de vous rendre compte.
+            </p>
         </div>
 
 
@@ -85,7 +100,7 @@
             <h2>Comparaison des Prix du Café</h2>
             <p>Découvrez comment le Kopi Luwak se positionne par rapport aux autres cafés du marché.</p>
             <canvas id="priceChart"></canvas>
-            <p><i>Le prix du Kopi Luwak varie entre 200 et 400€</i></p>
+            <p><i>Le prix du Kopi Luwak varie entre 200 et 400€, ce n'est qu'une représentation par rapport aux autres cafés</i></p>
         </div>
 
         <!--Flèche-->
@@ -95,9 +110,9 @@
 
         <!--Podcast-->
         <div class="podcast-container" id="podcast">
-            <h3>Podcast Thématique</h3>
+            <h3>Notre Podcast sur le sujet</h3>
             <p>Afin de connaître notre analyse complète de cette controverse :</p>
-            <a href="podcast.html" class="podcast-btn">Cliquez pour écouter le Podcast</a>
+            <a href="podcast.html" class="podcast-btn">Cliquez pour accèder au Podcast !</a>
         </div>
 
 
@@ -106,8 +121,8 @@
             <h3>Explorez la controverse</h3>
             <p>Naviguez à travers notre site pour une compréhension complète :</p>
             <ul>
-                <li><a href="histoire.html"><strong>Histoire</strong></a> : L'évolution de cette controverse...</li>
-                <li><a href="paroles.html"><strong>Paroles de Terrain</strong> </a>: Témoignages et interviews...</li>
+                <li><a href="histoire.html"><strong>Histoire</strong></a> : L'évolution de cette controverse</li>
+                <li><a href="paroles.html"><strong>Paroles de Terrain</strong> </a>: Témoignages et interviews</li>
                 <li><a href="apropos.html"><strong>À Propos</strong></a> : Notre approche et méthodologie</li>
                 <li><a href="glossaire.html"><strong>Glossaire</strong></a> : Les termes clés expliqués simplement</li>
                 <li><a href="bibliographie.html"><strong>Bibliographie</strong></a> : Nos sources et références académiques</li>
@@ -115,9 +130,10 @@
         </div>
     </div>
 
+    <!--Footer-->
     <footer>
         <p><strong>Projet académique | Semestre 6 | Cartographie des Controverses</strong></p>
-        <p>© 2024 - Le marché du Kopi Luwak</p>
+        <p>© 2026 - Le marché du Kopi Luwak</p>
     </footer>
 
 </body>

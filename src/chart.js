@@ -13,18 +13,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 'Café Arabica\nqualité',
                 'Café Arabica\nspécialité',
                 'Kona\n(Hawaii)',
-                'Kopi Luwak\n(nature)',
                 'Kopi Luwak\n(exploité)'
             ],
             datasets: [{
                 label: 'Prix par kg (USD)',
-                data: [2, 5, 12, 25, 100, 300],
+                data: [2, 5, 12, 25, 300],
                 backgroundColor: [
                     '#A6937C',
                     '#D9B589',
                     '#B8860B',
                     '#6B8E23',
-                    '#593825',
                     '#260801'
                 ],
                 borderColor: [
@@ -32,7 +30,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     '#C9A977',
                     '#A67C00',
                     '#5A7A1C',
-                    '#45291D',
                     '#1a0500'
                 ],
                 borderWidth: 2

@@ -1,0 +1,24 @@
+.timeline-section {
+    margin: var(--spacing-lg) 0;
+    padding: var(--spacing-lg);
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.timeline-section h2 {
+    text-align: center;
+    color: var(--accent-green);
+    margin-top: 0;
+}
+
+.timeline-section p {
+    text-align: center;
+    color: var(--taupe);
+    margin-bottom: var(--spacing-lg);
+}
+
+.timeline-section iframe {
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--taupe);
+}
