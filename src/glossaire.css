@@ -1,0 +1,358 @@
+/* ========== GLOSSAIRE — styles spécifiques ========== */
+/* Complète style.css sans le remplacer                 */
+
+/* ── TEXTURE DE FOND ── */
+.glossaire-bg {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+    /* Grain papier craft */
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+}
+
+/* Taches de café décoratives */
+.glossaire-bg::before {
+    content: '';
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(89,56,37,0.06) 0%, rgba(89,56,37,0.02) 50%, transparent 70%);
+    top: 15%;
+    right: -80px;
+    pointer-events: none;
+}
+
+.glossaire-bg::after {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(184,134,11,0.05) 0%, transparent 70%);
+    bottom: 20%;
+    left: -60px;
+    pointer-events: none;
+}
+
+
+
+/* ── BARRE DE RECHERCHE ── */
+.glossaire-search-wrap {
+    position: relative;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.glossaire-search {
+    width: 100%;
+    font-family: 'Crimson Text', serif;
+    font-size: 1.05rem;
+    padding: 0.85rem 1.25rem 0.85rem 3rem;
+    border: 1.5px solid rgba(166,147,124,0.3);
+    border-radius: var(--radius-lg);
+    background: white;
+    color: var(--text-dark);
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.glossaire-search::placeholder {
+    color: var(--taupe);
+    font-style: italic;
+}
+
+.glossaire-search:focus {
+    border-color: var(--medium-brown);
+    box-shadow: 0 0 0 3px rgba(89,56,37,0.08);
+}
+
+.glossaire-search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--taupe);
+    font-size: 1.1rem;
+    pointer-events: none;
+}
+
+/* Compteur résultats */
+.glossaire-results-count {
+    font-size: 0.8rem;
+    color: var(--taupe);
+    margin-bottom: 1.5rem;
+    font-style: italic;
+    min-height: 1.2em;
+    transition: opacity 0.2s;
+}
+
+/* ── FILTRES PAR CATÉGORIE ── */
+.glossaire-filters {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.glossaire-filter-btn {
+    font-family: 'Fraunces', serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 5px 14px;
+    border-radius: 100px;
+    border: 1.5px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: white;
+}
+
+.glossaire-filter-btn[data-cat="all"] {
+    border-color: var(--medium-brown);
+    color: var(--medium-brown);
+}
+.glossaire-filter-btn[data-cat="all"].active,
+.glossaire-filter-btn[data-cat="all"]:hover {
+    background: var(--medium-brown);
+    color: white;
+}
+
+.glossaire-filter-btn[data-cat="animal"] {
+    border-color: var(--accent-green);
+    color: var(--accent-green);
+}
+.glossaire-filter-btn[data-cat="animal"].active,
+.glossaire-filter-btn[data-cat="animal"]:hover {
+    background: var(--accent-green);
+    color: white;
+}
+
+.glossaire-filter-btn[data-cat="cafe"] {
+    border-color: var(--dark-burgundy);
+    color: var(--dark-burgundy);
+}
+.glossaire-filter-btn[data-cat="cafe"].active,
+.glossaire-filter-btn[data-cat="cafe"]:hover {
+    background: var(--dark-burgundy);
+    color: white;
+}
+
+.glossaire-filter-btn[data-cat="marche"] {
+    border-color: var(--accent-gold);
+    color: var(--accent-gold);
+}
+.glossaire-filter-btn[data-cat="marche"].active,
+.glossaire-filter-btn[data-cat="marche"]:hover {
+    background: var(--accent-gold);
+    color: white;
+}
+
+/* ── GRILLE DES TERMES ── */
+.glossaire-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.25rem;
+}
+
+/* ── CARTE DE TERME ── */
+.glossaire-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(166,147,124,0.18);
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    animation: glossaireIn 0.4s ease both;
+}
+
+@keyframes glossaireIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Délais en cascade */
+.glossaire-card:nth-child(1) { animation-delay: 0.05s; }
+.glossaire-card:nth-child(2) { animation-delay: 0.10s; }
+.glossaire-card:nth-child(3) { animation-delay: 0.15s; }
+.glossaire-card:nth-child(4) { animation-delay: 0.20s; }
+.glossaire-card:nth-child(5) { animation-delay: 0.25s; }
+.glossaire-card:nth-child(6) { animation-delay: 0.30s; }
+.glossaire-card:nth-child(7) { animation-delay: 0.35s; }
+.glossaire-card:nth-child(8) { animation-delay: 0.40s; }
+
+.glossaire-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(38,8,1,0.1);
+    border-color: rgba(166,147,124,0.4);
+}
+
+/* Lettre décorative en fond */
+.glossaire-card::before {
+    content: attr(data-letter);
+    position: absolute;
+    right: -0.1rem;
+    bottom: -1rem;
+    font-family: 'Fraunces', serif;
+    font-size: 7rem;
+    font-weight: 700;
+    font-style: italic;
+    color: rgba(166,147,124,0.07);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+    transition: color 0.25s ease;
+}
+
+.glossaire-card:hover::before {
+    color: rgba(166,147,124,0.12);
+}
+
+/* Bande couleur selon catégorie */
+.glossaire-card::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+    transition: width 0.25s ease;
+}
+
+.glossaire-card:hover::after { width: 6px; }
+
+.glossaire-card[data-cat="animal"]::after { background: var(--accent-green); }
+.glossaire-card[data-cat="cafe"]::after   { background: var(--dark-burgundy); }
+.glossaire-card[data-cat="marche"]::after { background: var(--accent-gold); }
+.glossaire-card[data-cat="all"]::after,
+.glossaire-card:not([data-cat])::after    { background: var(--taupe); }
+
+/* Badge catégorie */
+.glossaire-badge {
+    display: inline-block;
+    font-family: 'Fraunces', serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 2px 10px;
+    border-radius: 100px;
+    margin-bottom: 0.75rem;
+}
+
+.glossaire-badge-animal  { background: rgba(107,142,35,0.12); color: var(--accent-green); }
+.glossaire-badge-cafe    { background: rgba(89,37,51,0.1);    color: var(--dark-burgundy); }
+.glossaire-badge-marche  { background: rgba(184,134,11,0.12); color: var(--accent-gold); }
+.glossaire-badge-science { background: rgba(166,147,124,0.15); color: var(--medium-brown); }
+
+/* Terme */
+.glossaire-term-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--dark-burgundy);
+    margin-bottom: 0.6rem;
+    line-height: 1.2;
+}
+
+/* Définition — masquée par défaut, révélée au clic */
+.glossaire-term-def {
+    font-family: 'Crimson Text', serif;
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--text-dark);
+    text-align: left;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease, margin 0.3s ease;
+    margin-top: 0;
+}
+
+.glossaire-card.open .glossaire-term-def {
+    max-height: 300px;
+    opacity: 1;
+    margin-top: 0.5rem;
+}
+
+/* Flèche expand */
+.glossaire-expand {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(166,147,124,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--taupe);
+    font-size: 1rem;
+    line-height: 1;
+    transition: transform 0.3s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.glossaire-card.open .glossaire-expand {
+    transform: rotate(45deg);
+    background: var(--light-brown);
+    border-color: var(--light-brown);
+    color: var(--dark-brown);
+}
+
+/* ── SÉPARATEUR ALPHABÉTIQUE ── */
+.glossaire-alpha-sep {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 1rem;
+}
+
+.glossaire-alpha-letter {
+    font-family: 'Fraunces', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    font-style: italic;
+    color: var(--light-brown);
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.glossaire-alpha-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, rgba(217,181,137,0.5), transparent);
+}
+
+/* ── MESSAGE VIDE ── */
+.glossaire-empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 3rem;
+    color: var(--taupe);
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    display: none;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+    .glossaire-hero {
+        padding: 2.5rem 1.5rem 2rem;
+    }
+
+    .glossaire-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .glossaire-hero h1 {
+        font-size: 2rem;
+    }
+}

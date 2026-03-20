@@ -4,21 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glossaire - Kopi Luwak</title>
-    <!--Image d'icone du site-->
     <link rel="icon" type="image/png" href="/img/favicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="glossaire.css">
     <script src="script.js" defer></script>
+    <script src="glossaire.js" defer></script>
 </head>
 <body>
+
+    <!-- Texture de fond -->
+    <div class="glossaire-bg"></div>
+
+    <div class="leaf-decoration leaf-left"></div>
+    <div class="leaf-decoration leaf-right"></div>
+
     <header>
         <div class="header-container">
             <div class="logo-section">
-                <div class="logo-left">
-                </div>
+                <div class="logo-left"></div>
                 <div class="logo">Les civettes et le<span> Kopi Luwak</span></div>
-                <div class="logo-right">
-                </div>
+                <div class="logo-right"></div>
             </div>
             <nav>
                 <a href="index.html" class="nav-link">Accueil</a>
@@ -31,59 +37,134 @@
         </div>
     </header>
 
-    <div class="leaf-decoration leaf-left"></div>
-    <div class="leaf-decoration leaf-right"></div>
-
     <div class="container">
-        <h1>Glossaire</h1>
-        <p>Comprendre les termes clés de la controverse du Kopi Luwak.</p>
 
-        <div class="glossary-term">
-            <dt>Civette (Paradoxurus hermaphroditus)</dt>
-            <dd>Petit mammifère carnivore originaire d'Asie du Sud-Est. Également connu sous le nom de "luwak" en indonésien. Les civettes se nourrissent naturellement des fruits du café mûrs.</dd>
+
+        <!-- Recherche -->
+        <div class="glossaire-search-wrap">
+            <span class="glossaire-search-icon">&#9906;</span>
+            <input
+                class="glossaire-search"
+                type="text"
+                id="glossaireSearch"
+                placeholder="Rechercher un terme…"
+                oninput="filterGlossaire()"
+                autocomplete="off"
+            >
         </div>
 
-        <div class="glossary-term">
-            <dt>Kopi Luwak</dt>
-            <dd>Café élaboré à partir de grains de café qui ont transité par le système digestif d'une civette. "Kopi" signifie café en indonésien et malais.</dd>
+        <!-- Résultats -->
+        <div class="glossaire-results-count" id="resultsCount"></div>
+
+        <!-- Filtres par catégorie -->
+        <div class="glossaire-filters">
+            <button class="glossaire-filter-btn active" data-cat="all" onclick="setCat('all', this)">Tous</button>
+            <button class="glossaire-filter-btn" data-cat="animal" onclick="setCat('animal', this)">Faune &amp; Nature</button>
+            <button class="glossaire-filter-btn" data-cat="cafe" onclick="setCat('cafe', this)">Café &amp; Production</button>
+            <button class="glossaire-filter-btn" data-cat="marche" onclick="setCat('marche', this)">Marché &amp; Éthique</button>
         </div>
 
-        <div class="glossary-term">
-            <dt>Fermentation digestive</dt>
-            <dd>Processus par lequel les enzymes digestives de la civette modifient la structure moléculaire du grain de café, créant des arômes et saveurs distincts.</dd>
+        <!-- Grille des termes -->
+        <div class="glossaire-grid" id="glossaireGrid">
+
+            <!-- Séparateur B -->
+            <div class="glossaire-alpha-sep" data-alpha="B">
+                <span class="glossaire-alpha-letter">B</span>
+                <span class="glossaire-alpha-line"></span>
+            </div>
+
+            <div class="glossaire-card" data-cat="marche" data-letter="B" data-term="biodiversité" onclick="toggleCard(this)">
+                <span class="glossaire-badge glossaire-badge-animal">Faune &amp; Nature</span>
+                <span class="glossaire-expand">+</span>
+                <div class="glossaire-term-title">Biodiversité</div>
+                <div class="glossaire-term-def">Variété des formes de vie présentes dans un écosystème donné — espèces, gènes, habitats. La controverse du Kopi Luwak a des impacts directs sur la biodiversité locale : la capture de civettes sauvages fragilise leurs populations et perturbe les équilibres des forêts d'Asie du Sud-Est.</div>
+            </div>
+
+            <!-- Séparateur C -->
+            <div class="glossaire-alpha-sep" data-alpha="C">
+                <span class="glossaire-alpha-letter">C</span>
+                <span class="glossaire-alpha-line"></span>
+            </div>
+
+            <div class="glossaire-card" data-cat="marche" data-letter="C" data-term="certification éthique" onclick="toggleCard(this)">
+                <span class="glossaire-badge glossaire-badge-marche">Marché &amp; Éthique</span>
+                <span class="glossaire-expand">+</span>
+                <div class="glossaire-term-title">Certification éthique</div>
+                <div class="glossaire-term-def">Label ou garantie attestant que le Kopi Luwak a été produit dans le respect de certains critères de bien-être animal et de durabilité environnementale — par exemple les anciens audits UTZ ou Rainforest Alliance. Extrêmement rare dans la pratique : les coûts de certification sont élevés et la fraude reste courante sur ce marché de niche.</div>
+            </div>
+
+            <div class="glossaire-card" data-cat="animal" data-letter="C" data-term="civette" onclick="toggleCard(this)">
+                <span class="glossaire-badge glossaire-badge-animal">Faune &amp; Nature</span>
+                <span class="glossaire-expand">+</span>
+                <div class="glossaire-term-title">Civette palmiste asiatique</div>
+                <div class="glossaire-term-def">Petit mammifère omnivore (Paradoxurus hermaphroditus) originaire d'Asie du Sud-Est. Connue sous le nom de « luwak » en indonésien. La civette sauvage sélectionne instinctivement les cerises de café les plus mûres grâce à son odorat — une capacité perdue en captivité. En cage, elle présente des comportements stéréotypés (déambulation, automutilation) témoignant d'un stress chronique.</div>
+            </div>
+
+            <div class="glossaire-card" data-cat="marche" data-letter="C" data-term="commerce équitable" onclick="toggleCard(this)">
+                <span class="glossaire-badge glossaire-badge-marche">Marché &amp; Éthique</span>
+                <span class="glossaire-expand">+</span>
+                <div class="glossaire-term-title">Commerce équitable</div>
+                <div class="glossaire-term-def">Mouvement commercial visant à garantir une rémunération juste aux producteurs, notamment dans les pays du Sud. Dans le contexte du Kopi Luwak, l'écart entre le prix payé au producteur (quelques euros le kilo) et le prix de vente en Europe (jusqu'à 700€ le kilo) est particulièrement criant et illustre les limites de ce marché de luxe.</div>
+            </div>
+
+            <!-- Séparateur F -->
+            <div class="glossaire-alpha-sep" data-alpha="F">
+                <span class="glossaire-alpha-letter">F</span>
+                <span class="glossaire-alpha-line"></span>
+            </div>
+
+            <div class="glossaire-card" data-cat="cafe" data-letter="F" data-term="fermentation digestive" onclick="toggleCard(this)">
+                <span class="glossaire-badge glossaire-badge-cafe">Café &amp; Production</span>
+                <span class="glossaire-expand">+</span>
+                <div class="glossaire-term-title">Fermentation digestive</div>
+                <div class="glossaire-term-def">Processus par lequel les enzymes présentes dans le système digestif de la civette modifient la structure moléculaire des grains de café — notamment en dégradant certaines protéines. Ce processus de fermentation naturelle est souvent comparé par les torréfacteurs à d'autres cafés fermentés. Son impact réel sur la qualité gustative reste néanmoins débattu scientifiquement.</div>
+            </div>
+
+            <div class="glossaire-card" data-cat="marche" data-letter="F" data-term="fraude alimentaire" onclick="toggleCard(this)">
+                <span class="glossaire-badge glossaire-badge-marche">Marché &amp; Éthique</span>
+                <span class="glossaire-expand">+</span>
+                <div class="glossaire-term-title">Fraude alimentaire</div>
+                <div class="glossaire-term-def">Pratique consistant à vendre un produit falsifié ou contrefait comme authentique. Extrêmement répandue sur le marché du Kopi Luwak : selon des estimations, la grande majorité du café vendu sous ce nom serait mélangée à des grains ordinaires, voire entièrement contrefaite. L'absence de certification internationale rend la traçabilité quasiment impossible.</div>
+            </div>
+
+            <!-- Séparateur K -->
+            <div class="glossaire-alpha-sep" data-alpha="K">
+                <span class="glossaire-alpha-letter">K</span>
+                <span class="glossaire-alpha-line"></span>
+            </div>
+
+            <div class="glossaire-card" data-cat="cafe" data-letter="K" data-term="kopi luwak" onclick="toggleCard(this)">
+                <span class="glossaire-badge glossaire-badge-cafe">Café &amp; Production</span>
+                <span class="glossaire-expand">+</span>
+                <div class="glossaire-term-title">Kopi Luwak</div>
+                <div class="glossaire-term-def">Littéralement « café civette » en indonésien et malais. Café élaboré à partir de grains ayant transité par le système digestif d'une civette palmiste asiatique. Longtemps considéré comme le café le plus cher du monde (jusqu'à 700€ le kilo en Europe), son prix est davantage lié à sa rareté et à son image de luxe qu'à une qualité gustative objectivement supérieure.</div>
+            </div>
+
+            <!-- Séparateur P -->
+            <div class="glossaire-alpha-sep" data-alpha="P">
+                <span class="glossaire-alpha-letter">P</span>
+                <span class="glossaire-alpha-line"></span>
+            </div>
+
+            <div class="glossaire-card" data-cat="cafe" data-letter="P" data-term="production en captivité" onclick="toggleCard(this)">
+                <span class="glossaire-badge glossaire-badge-cafe">Café &amp; Production</span>
+                <span class="glossaire-expand">+</span>
+                <div class="glossaire-term-title">Production en captivité</div>
+                <div class="glossaire-term-def">Élevage de civettes enfermées dans des cages exiguës pour la production intensive de Kopi Luwak, par opposition à la récolte traditionnelle des grains dans les déjections de civettes sauvages. Représente aujourd'hui environ 70% de la production mondiale. Les conditions d'élevage sont au cœur de la controverse : les animaux ne peuvent plus sélectionner naturellement les cerises mûres, dégradant à la fois leur bien-être et la qualité du café.</div>
+            </div>
+
+        </div><!-- /glossaire-grid -->
+
+        <div class="glossaire-empty" id="glossaireEmpty">
+            Aucun terme ne correspond à votre recherche.
         </div>
 
-        <div class="glossary-term">
-            <dt>Production en captivité</dt>
-            <dd>Élevage de civettes en cages pour la production intensive de Kopi Luwak, par opposition à la récolte naturelle des grains digérés par des civettes sauvages.</dd>
-        </div>
-
-        <div class="glossary-term">
-            <dt>Certification éthique</dt>
-            <dd>Label ou certification garantissant que le Kopi Luwak a été produit selon certains critères de bien-être animal et de durabilité environnementale.</dd>
-        </div>
-
-        <div class="glossary-term">
-            <dt>Biodiversité</dt>
-            <dd>Variété de formes de vie (espèces, génétique, écosystèmes). La controverse du Kopi Luwak a des impacts sur la biodiversité locale.</dd>
-        </div>
-
-        <div class="glossary-term">
-            <dt>Commerce équitable</dt>
-            <dd>Mouvement visant à assurer que les producteurs reçoivent une rémunération juste et que les conditions de travail et de production respectent certaines normes éthiques.</dd>
-        </div>
-
-        <div class="glossary-term">
-            <dt>Fraude alimentaire</dt>
-            <dd>Pratique consistant à vendre un produit falsifié ou contrefait comme authentique. Très courante dans le marché du Kopi Luwak.</dd>
-        </div>
-    </div>
+    </div><!-- /container -->
 
     <footer>
         <p><strong>Projet académique | Semestre 6 | Cartographie des Controverses</strong></p>
         <p style="margin-top: 1rem; font-size: 0.9rem;">© 2026 - Site créé pour explorer les multiples perspectives d'une controverse</p>
     </footer>
-
 
 </body>
 </html>

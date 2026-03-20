@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Histoire - Kopi Luwak</title>
+
     <!--Image d'icone du site-->
     <link rel="icon" type="image/png" href="/img/favicon.png">
+
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="histoire.css">
@@ -36,18 +38,23 @@
         </div>
     </header>
 
-    <!--Lien KnightTimeLine-->
+    <!--Container Global-->
     <div class="container">
-        <h1 class="page-title">L'Histoire de la Controverse</h1>
+        <!--Lien KnightTimeLine-->
+        <h1 class="page-title">Les origines</h1>
 
-        <p>Le Kopi Luwak est bien plus qu'un simple café. C'est une histoire de découverte, de commercialisation, et finalement, de remise en question.</p>
+        <p>Le Kopi Luwak est bien plus qu'un simple café. C'est une histoire de découverte, de commercialisation, et finalement, de remise en question.
+            <br>
+            Vous découvrez en dessous une frise chronologique qui reprend cette controverse a l'origine.
+        </p>
 
-        <div class="timeline-section">
-            <h2>Frise Chronologique Interactive</h2>            
+        <div class="timeline-section">          
             <iframe src='https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=v2%3A2PACX-1vRkTPm30AHFxhZ4Xuj2phFjazDSbf6TzP4JQl3SA2MjEEMTA2ClLbrQ1_z6v80I3kItUMlHTwDh5Ltz&font=Default&lang=en&initial_zoom=2&width=100%25&height=650' width='100%' height='650' webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder='0'></iframe>
         </div>
 
-        <h2>Les Enjeux Centraux</h2>
+
+        <!--Les Enjeux Centraux-->
+        <h2>Points de tensions</h2>
 
         <div class="card">
             <h3>Le Bien-Être Animal</h3>
@@ -56,7 +63,7 @@
 
         <div class="card">
             <h3>L'Impact Économique</h3>
-            <p>Le Kopi Luwak représente un marché lucratif. Un kilogramme peut coûter entre 300 et 600 euros, voire plus. Pour les producteurs, c'est une source de revenus majeure, ce qui explique pourquoi les critiques ne sont pas toujours bien reçues.</p>
+            <p>Le Kopi Luwak représente un marché lucratif. Un kilogramme peut coûter entre 200 et 400 euros, voire plus. Pour les producteurs, c'est une source de revenus majeure, ce qui explique pourquoi les critiques ne sont pas toujours bien reçues.</p>
         </div>
 
         <div class="card">
@@ -68,11 +75,27 @@
             <h3>L'Authenticité du Produit</h3>
             <p>Un problème majeur : beaucoup de cafés vendus comme "Kopi Luwak" ne le sont pas réellement. La fraude est généralisée, avec des productions falsifiées ou simplement du café ordinaire vendu au prix fort.</p>
         </div>
+
+        <!--Carte-->
+        <div class="map-container" id="map">
+            <h2>Découvrez l'évolution de la production</h2>
+            <p>Pour vous permettre d'avoir une meilleure compréhension :</p>
+            <iframe 
+                src="https://uploads.knightlab.com/storymapjs/1c84c1ecab2465bde243c0a6c28491dd/evolution-de-la-production/index.html" 
+                width="100%" 
+                height="600px" 
+                frameborder="0" 
+                style="border: 1px solid #ccc; border-radius: 8px;">
+            </iframe>
+        </div>
+
     </div>
 
+
+    <!--Footer-->
     <footer>
         <p><strong>Projet académique | Semestre 6 | Cartographie des Controverses</strong></p>
-        <p style="margin-top: 1rem; font-size: 0.9rem;">© 2026 - Site créé pour explorer les multiples perspectives d'une controverse</p>
+        <p>© 2026 - Le marché du Kopi Luwak</p>
     </footer>
 
 

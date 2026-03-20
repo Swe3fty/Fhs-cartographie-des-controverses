@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paroles de Terrain - Kopi Luwak</title>
-    <!--Image d'icone du site-->
+
     <link rel="icon" type="image/png" href="/img/favicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,600&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="paroles.css">
     <script src="script.js" defer></script>
 </head>
+
 <body>
+
+    <!-- Feuilles décoratives -->
+    <div class="leaf-decoration leaf-left"></div>
+    <div class="leaf-decoration leaf-right"></div>
+
+    <!-- Header -->
     <header>
         <div class="header-container">
             <div class="logo-section">
-                <div class="logo-left">
-                </div>
+                <div class="logo-left"></div>
                 <div class="logo">Les civettes et le<span> Kopi Luwak</span></div>
-                <div class="logo-right">
-                </div>
+                <div class="logo-right"></div>
             </div>
             <nav>
                 <a href="index.html" class="nav-link">Accueil</a>
@@ -31,55 +39,307 @@
         </div>
     </header>
 
+    <!-- Container principal -->
     <div class="container">
-        <h1>Paroles de Terrain</h1>
-        <p>Découvrez les perspectives variées sur cette controverse à travers des citations et interviews.</p>
 
-        <h2>Interviews & Témoignages</h2>
+        <h1>Paroles de terrain</h1>
 
-        <div class="quote-box">
-            <p>"Le Kopi Luwak sauvage, récolté naturellement dans nos plantations, est acceptable. Mais la production en captivité est une atrocité. Les civettes souffrent énormément."</p>
-            <div class="quote-author">— Producteur de café indonésien (anonyme), Sumatra</div>
+        <!-- Onglets -->
+        <div class="paroles-tabs">
+            <button class="paroles-tab" onclick="showParolesSection('producteur', this)">Producteur indonésien</button>
+            <button class="paroles-tab" onclick="showParolesSection('torrefacteur', this)">Naoushad Karim — Torréfacteur</button>
+            <button class="paroles-tab" onclick="showParolesSection('citations', this)">Citations clés</button>
         </div>
 
-        <div class="quote-box">
-            <p>"Les consommateurs veulent se sentir spéciaux en buvant le café le plus cher du monde. Ils ne veulent pas penser aux civettes en cage. C'est plus facile de fermer les yeux."</p>
-            <div class="quote-author">— Défenseur des droits des animaux, Organisation Internationale</div>
-        </div>
-
-        <div class="quote-box">
-            <p>"Pour nous, c'est une tradition. Pendant des générations, nous avons récolté les grains après que les civettes les aient mangés. C'était un processus naturel qui n'avait rien de cruel."</p>
-            <div class="quote-author">— Agriculteur de café de troisième génération, Java</div>
-        </div>
-
-        <h2>Perspectives Multiples</h2>
 
         <div class="card">
-            <h3>Perspective des Producteurs</h3>
-            <p>Les producteurs soulignent que le Kopi Luwak représente une opportunité économique cruciale pour les régions pauvres d'Indonésie. Beaucoup argumentent que l'élevage contrôlé permet une meilleure sécurité alimentaire et des revenus stables, et que les civettes sont bien traitées dans les bonnes fermes.</p>
+            <h3>Nous avons eu la chance d'avoir eu des échanges avec un producteur, un torréfacteur et des consommateurs. Avec ces échanges, nous avons décidé de vous proposer une page dédiée à leurs témoignages, afin de donner voix aux différents acteurs de cette controverse et d'illustrer concrètement les tensions qui la traversent.</h3>
+            <br>
+        </div>
+        <!-- ===== SECTION : CITATIONS ===== -->
+        <div class="paroles-section" id="psec-citations">
+
+            <div class="paroles-section-title">Extraits marquants de nos interviews</div>
+
+            <div class="paroles-intro-box">
+                Ces citations sont tirées des deux interviews que nous avons menées : un producteur indonésien (anonyme) impliqué dans la filière depuis plusieurs générations, et Naoushad Karim, torréfacteur à Lille depuis 2002, 4e génération d'une famille de professionnels du café.
+            </div>
+
+            <div class="paroles-quote-card">
+                <span class="paroles-quote-mark">&ldquo;</span>
+                <p class="paroles-quote-text">Le Kopi Luwak authentique, issu de la nature, ne représente qu'une infime fraction du marché. C'est précisément cet écart entre production réelle et demande mondiale qui a conduit à la généralisation de l'élevage intensif : c'est le seul moyen de produire les volumes exigés par les distributeurs internationaux.</p>
+                <div class="paroles-quote-meta">
+                    <div class="paroles-avatar av-farmer">PI</div>
+                    <div>
+                        <div class="paroles-meta-name">Producteur indonésien (anonyme)</div>
+                        <div class="paroles-meta-role">Filière Kopi Luwak, Indonésie</div>
+                    </div>
+                    <span class="paroles-tag tag-economic">Économique</span>
+                </div>
+            </div>
+
+            <div class="paroles-quote-card">
+                <span class="paroles-quote-mark">&ldquo;</span>
+                <p class="paroles-quote-text">En captivité, la civette perd sa capacité de sélection des cerises les plus mûres. C'est pourquoi le Kopi Luwak d'élevage a souvent un goût moins raffiné que les grains issus de la nature — la civette sauvage est une véritable connaisseuse.</p>
+                <div class="paroles-quote-meta">
+                    <div class="paroles-avatar av-farmer">PI</div>
+                    <div>
+                        <div class="paroles-meta-name">Producteur indonésien (anonyme)</div>
+                        <div class="paroles-meta-role">Filière Kopi Luwak, Indonésie</div>
+                    </div>
+                    <span class="paroles-tag tag-science">Science &amp; goût</span>
+                </div>
+            </div>
+
+            <div class="paroles-quote-card">
+                <span class="paroles-quote-mark">&ldquo;</span>
+                <p class="paroles-quote-text">J'ai jamais voulu travailler du café Kopi Luwak parce qu'il y avait beaucoup d'informations sur la maltraitance des civettes. Depuis fin 2025, j'ai trouvé une ferme en Indonésie qui garantit par écrit que les civettes sont en liberté, avec une garantie de l'État indonésien.</p>
+                <div class="paroles-quote-meta">
+                    <div class="paroles-avatar av-expert">NK</div>
+                    <div>
+                        <div class="paroles-meta-name">Naoushad Karim</div>
+                        <div class="paroles-meta-role">Torréfacteur — Lille, France (depuis 2002)</div>
+                    </div>
+                    <span class="paroles-tag tag-welfare">Bien-être animal</span>
+                </div>
+            </div>
+
+            <div class="paroles-quote-card">
+                <span class="paroles-quote-mark">&ldquo;</span>
+                <p class="paroles-quote-text">Ce n'est pas forcément la qualité, c'est vraiment la rareté qui fait le prix. Ça vaut la peine de le goûter au moins une fois si on aime le café pour se faire sa propre opinion.</p>
+                <div class="paroles-quote-meta">
+                    <div class="paroles-avatar av-expert">NK</div>
+                    <div>
+                        <div class="paroles-meta-name">Naoushad Karim</div>
+                        <div class="paroles-meta-role">Torréfacteur — Lille, France</div>
+                    </div>
+                    <span class="paroles-tag tag-market">Marché</span>
+                </div>
+            </div>
+
+            <div class="paroles-quote-card">
+                <span class="paroles-quote-mark">&ldquo;</span>
+                <p class="paroles-quote-text">Une tasse peut coûter 50 dollars à Londres ou Paris, alors que l'agriculteur ne touche qu'une fraction de cette somme. Je crois que le commerce direct est la solution : lorsque nous vendons directement aux torréfacteurs, nous conservons une plus grande partie de la valeur et pouvons prouver nos normes éthiques.</p>
+                <div class="paroles-quote-meta">
+                    <div class="paroles-avatar av-farmer">PI</div>
+                    <div>
+                        <div class="paroles-meta-name">Producteur indonésien (anonyme)</div>
+                        <div class="paroles-meta-role">Filière Kopi Luwak, Indonésie</div>
+                    </div>
+                    <span class="paroles-tag tag-economic">Économique</span>
+                </div>
+            </div>
+
         </div>
 
-        <div class="card">
-            <h3>Perspective des Défenseurs des Animaux</h3>
-            <p>Les associations de protection animale pointent du doigt les conditions de captivité, documentées par des vidéos d'enquête. Elles prônent l'arrêt complet de la production en captivité et demandent une meilleure régulation pour la récolte naturelle.</p>
+        <!-- ===== SECTION : PRODUCTEUR INDONÉSIEN ===== -->
+        <div class="paroles-section" id="psec-producteur">
+
+            <div class="paroles-section-title">Interview — Producteur indonésien (anonyme)</div>
+
+            <div class="paroles-intro-box">
+                Cet entretien a été mené par écrit avec un producteur de café indonésien souhaitant garder l'anonymat. Il travaille dans la filière Kopi Luwak et nous apporte un éclairage précieux sur les réalités de la production, de la certification et des enjeux économiques de cette controverse.
+            </div>
+
+            <!-- Interview accordéon -->
+            <div class="paroles-interview open" id="pint-prod1">
+                <div class="paroles-int-header" onclick="toggleParolesInt('pint-prod1')">
+                    <div class="paroles-avatar av-farmer" style="width:46px;height:46px;font-size:13px;">PI</div>
+                    <div>
+                        <div class="paroles-int-name">Rendement quotidien &amp; demande internationale</div>
+                        <div class="paroles-int-role">Combien de grains par jour ? Est-ce suffisant ?</div>
+                    </div>
+                    <span class="paroles-int-toggle">+</span>
+                </div>
+                <div class="paroles-int-body">
+                    <div class="paroles-qa">
+                        <div class="paroles-question"><span class="paroles-q-label">Q</span> Combien de grains est-il possible de trouver en un jour ? Est-ce suffisant pour répondre à la demande ?</div>
+                        <div class="paroles-answer">Une civette palmiste asiatique en bonne santé consomme généralement entre 200 et 300 grammes de cerises de café par jour, mais après digestion et transformation, cela ne donne qu'environ 50 à 100 grammes de grains de café vert. Si l'on suit des méthodes véritablement traditionnelles, issues de la cueillette sauvage, une personne ne trouverait peut-être que suffisamment d'excréments pour produire 1 à 2 kilogrammes de grains après une journée entière de marche dans la forêt. Non, cela ne suffit absolument pas pour répondre à la demande mondiale. C'est précisément cet « écart » qui a conduit à la généralisation de l'élevage intensif : c'est le seul moyen de produire les volumes exigés par les distributeurs internationaux. Le Kopi Luwak authentique, issu de la nature, ne représente qu'une infime fraction du marché.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paroles-interview" id="pint-prod2">
+                <div class="paroles-int-header" onclick="toggleParolesInt('pint-prod2')">
+                    <div class="paroles-avatar av-farmer" style="width:46px;height:46px;font-size:13px;">PI</div>
+                    <div>
+                        <div class="paroles-int-name">Certifications &amp; origine des grains</div>
+                        <div class="paroles-int-role">Garanties, labels, et fraudes dans la filière</div>
+                    </div>
+                    <span class="paroles-int-toggle">+</span>
+                </div>
+                <div class="paroles-int-body">
+                    <div class="paroles-qa">
+                        <div class="paroles-question"><span class="paroles-q-label">Q</span> Avez-vous des certifications pour garantir l'origine de vos grains ? Est-ce commun dans votre travail ?</div>
+                        <div class="paroles-answer">Dans notre secteur, la « certification » est un sujet complexe. Est-ce courant ? Non. Comme une grande partie de la production se déroule dans des villages reculés, la certification officielle est coûteuse et rare. Nous nous appuyons sur les IG (indications géographiques) et parfois sur les certifications du ministère indonésien de l'Agriculture. Cependant, le label le plus recherché est la certification « Cage-Free » (sans cage) ou « Wild » (sauvage), comme celles auditées par UTZ ou Rainforest Alliance par le passé, mais celles-ci sont très difficiles à maintenir. Malheureusement, la fraude est courante : de nombreux grains vendus sous le nom de Kopi Luwak ne sont que des grains ordinaires mélangés à un faible pourcentage de véritables grains.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paroles-interview" id="pint-prod3">
+                <div class="paroles-int-header" onclick="toggleParolesInt('pint-prod3')">
+                    <div class="paroles-avatar av-farmer" style="width:46px;height:46px;font-size:13px;">PI</div>
+                    <div>
+                        <div class="paroles-int-name">Le régime alimentaire de la civette</div>
+                        <div class="paroles-int-role">Un mythe courant déconstruit</div>
+                    </div>
+                    <span class="paroles-int-toggle">+</span>
+                </div>
+                <div class="paroles-int-body">
+                    <div class="paroles-qa">
+                        <div class="paroles-question"><span class="paroles-q-label">Q</span> Les civettes ne mangent-elles que des graines de café ?</div>
+                        <div class="paroles-answer">Un mythe courant veut qu'elles ne mangent que du café. En réalité, la civette est omnivore. Elle adore les fruits charnus comme la papaye, la banane et l'ananas. Elles se nourrissent également d'insectes, de petits reptiles et même de graines. Si ce café est si bon, c'est parce que la civette sauvage est une véritable connaisseuse. Elle utilise son odorat pour ne sélectionner que les cerises les plus mûres et les plus sucrées. En captivité, elle perd cette capacité de sélection, ce qui explique pourquoi le Kopi Luwak d'élevage a souvent un goût moins raffiné que les grains issus de la nature.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paroles-interview" id="pint-prod4">
+                <div class="paroles-int-header" onclick="toggleParolesInt('pint-prod4')">
+                    <div class="paroles-avatar av-farmer" style="width:46px;height:46px;font-size:13px;">PI</div>
+                    <div>
+                        <div class="paroles-int-name">L'écart de prix entre producteur et marché</div>
+                        <div class="paroles-int-role">50$ la tasse, mais quelle part pour le cultivateur ?</div>
+                    </div>
+                    <span class="paroles-int-toggle">+</span>
+                </div>
+                <div class="paroles-int-body">
+                    <div class="paroles-qa">
+                        <div class="paroles-question"><span class="paroles-q-label">Q</span> Votre café se vend très cher en Occident. Les producteurs ne reçoivent qu'une petite partie. Qu'est-ce qui justifie cela ?</div>
+                        <div class="paroles-answer">C'est vrai, une tasse à Londres ou à Paris peut coûter 50 dollars, alors que l'agriculteur ne touche qu'une fraction de cette somme. La logistique, les taxes à l'exportation, le marketing international et les marges liées à l' « image de marque de luxe » des cafés européens expliquent cet écart. Il y a aussi le coût du nettoyage et des multiples tris manuels pour garantir l'hygiène des grains. C'est frustrant. Nous effectuons le travail difficile du suivi, du nettoyage et de la transformation. Je crois que le commerce direct est la solution : lorsque nous vendons directement aux torréfacteurs, nous conservons une plus grande partie de la valeur et pouvons prouver nos normes éthiques.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paroles-interview" id="pint-prod5">
+                <div class="paroles-int-header" onclick="toggleParolesInt('pint-prod5')">
+                    <div class="paroles-avatar av-farmer" style="width:46px;height:46px;font-size:13px;">PI</div>
+                    <div>
+                        <div class="paroles-int-name">Les « cultures » de laboratoire</div>
+                        <div class="paroles-int-role">Menace ou solution pour l'avenir de la filière ?</div>
+                    </div>
+                    <span class="paroles-int-toggle">+</span>
+                </div>
+                <div class="paroles-int-body">
+                    <div class="paroles-qa">
+                        <div class="paroles-question"><span class="paroles-q-label">Q</span> Des laboratoires essaient d'imiter les enzymes des civettes pour produire un café sans animaux. Le voyez-vous comme une menace ou une solution ?</div>
+                        <div class="paroles-answer">Certaines entreprises utilisent la science de la fermentation pour imiter les enzymes présentes dans l'estomac de la civette. Je vois cela comme une solution pour le marché de masse : si les gens veulent le goût « doux et non amer » du Kopi Luwak sans se soucier du bien-être animal, le café cultivé en laboratoire est excellent. Il évite aux animaux d'être mis en cage. Ce n'est pas une menace pour les producteurs authentiques. Tout comme pour les diamants de laboratoire par rapport aux diamants naturels, il y aura toujours un marché pour le « vrai » produit issu de nos sols volcaniques et de nos forêts. Cela nous oblige simplement à faire preuve de plus de transparence quant à nos origines sauvages.</div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
-        <div class="card">
-            <h3>Perspective des Consommateurs</h3>
-            <p>Les consommateurs sont divisés : certains prennent position contre le produit, tandis que d'autres achètent du Kopi Luwak "certifié éthique". La majorité reste ignorante des enjeux éthiques.</p>
+        <!-- ===== SECTION : TORRÉFACTEUR ===== -->
+        <div class="paroles-section" id="psec-torrefacteur">
+
+            <div class="paroles-section-title">Interview — Naoushad Karim, Torréfacteur</div>
+
+            <div class="paroles-intro-box">
+                Entretien réalisé le <strong>11 mars 2026</strong> par Salim Junior Pedro Nounagnon et son équipe. Naoushad Karim est torréfacteur à Lille depuis 2002, 4e génération d'une famille du café (son arrière-grand-père était ouvrier agricole dans des plantations, son grand-père exportateur de café vert de Madagascar). Il travaille aujourd'hui avec une trentaine d'origines différentes et commercialise du Kopi Luwak depuis fin 2025.
+            </div>
+
+            <div class="paroles-interview open" id="pint-nk1">
+                <div class="paroles-int-header" onclick="toggleParolesInt('pint-nk1')">
+                    <div class="paroles-avatar av-expert" style="width:46px;height:46px;font-size:13px;">NK</div>
+                    <div>
+                        <div class="paroles-int-name">Pourquoi proposer du Kopi Luwak maintenant ?</div>
+                        <div class="paroles-int-role">Un refus de longue date, puis une ferme de confiance</div>
+                    </div>
+                    <span class="paroles-int-toggle">+</span>
+                </div>
+                <div class="paroles-int-body">
+                    <div class="paroles-qa">
+                        <div class="paroles-question"><span class="paroles-q-label">Q</span> Depuis quand proposez-vous du Kopi Luwak, et pourquoi ne l'aviez-vous pas fait avant ?</div>
+                        <div class="paroles-answer">Depuis la fin de l'année dernière, depuis fin 2025. J'ai jamais voulu travailler du café Kopi Luwak parce qu'il y avait beaucoup d'informations sur la maltraitance des civettes et ça ne me plaisait pas — en plus du prix qui est assez élevé, mais le prix c'était pas un frein, c'était vraiment cette orientation maltraitance. Pourquoi j'ai commencé depuis fin 2025 ? C'est que j'ai trouvé une ferme en Indonésie qui garantit — c'est une garantie écrite — que les civettes sont en liberté, que ce sont des civettes sauvages. Et ils ont une garantie de l'État indonésien.</div>
+                    </div>
+                    <div class="paroles-qa">
+                        <div class="paroles-question"><span class="paroles-q-label">Q</span> Comment êtes-vous entré en contact avec ce producteur ?</div>
+                        <div class="paroles-answer">C'est lui qui m'a contacté. Je préfère ne pas communiquer son nom : j'ai eu assez de mal à le trouver et même si c'est un projet étudiant, ce genre de sourcing dans le milieu du café est assez confidentiel. C'est quelqu'un de très sérieux, capable de produire des attestations de l'État indonésien disant que les civettes sont sauvages.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paroles-interview" id="pint-nk2">
+                <div class="paroles-int-header" onclick="toggleParolesInt('pint-nk2')">
+                    <div class="paroles-avatar av-expert" style="width:46px;height:46px;font-size:13px;">NK</div>
+                    <div>
+                        <div class="paroles-int-name">Qualité et prix du Kopi Luwak</div>
+                        <div class="paroles-int-role">La rareté avant la qualité</div>
+                    </div>
+                    <span class="paroles-int-toggle">+</span>
+                </div>
+                <div class="paroles-int-body">
+                    <div class="paroles-qa">
+                        <div class="paroles-question"><span class="paroles-q-label">Q</span> Comment situeriez-vous le Kopi Luwak en termes de qualité sur le marché du café ?</div>
+                        <div class="paroles-answer">Il a tout le temps été prisé, principalement par son originalité. Cette originalité d'être ingéré par la civette et de récupérer le grain dans ses déjections lui confère un goût un peu particulier. Comparons avec le Blue Mountain de Jamaïque : ce café est cher parce qu'on a un cahier des charges de qualité très dur, du traitement de la cerise jusqu'au grain vert. Dans le Kopi Luwak, on n'a pas cette même exigence. Ce n'est pas forcément la qualité, c'est vraiment la rareté qui fait le prix.</div>
+                    </div>
+                    <div class="paroles-qa">
+                        <div class="paroles-question"><span class="paroles-q-label">Q</span> Comment vos clients réagissent-ils face à ce café ?</div>
+                        <div class="paroles-answer">C'est un café cadeau. Comme c'est un café cadeau, c'est un café qu'on offre ou qu'on s'offre de temps en temps — au vu du prix, y a très peu de gens qui vont se dire « je vais acheter un café à 40€ les 125 g ». La consommation moyenne d'un foyer c'est 250 g par semaine, donc ça ferait un budget café de 80€, ce qui est énorme. Donc on est sur un café qu'on s'offre, qu'on offre à ses convives. C'est se faire plaisir — comme une belle pièce de boucher de temps en temps.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paroles-interview" id="pint-nk3">
+                <div class="paroles-int-header" onclick="toggleParolesInt('pint-nk3')">
+                    <div class="paroles-avatar av-expert" style="width:46px;height:46px;font-size:13px;">NK</div>
+                    <div>
+                        <div class="paroles-int-name">La préparation, un facteur clé</div>
+                        <div class="paroles-int-role">Slow coffee, French press, espresso — laquelle choisir ?</div>
+                    </div>
+                    <span class="paroles-int-toggle">+</span>
+                </div>
+                <div class="paroles-int-body">
+                    <div class="paroles-qa">
+                        <div class="paroles-question"><span class="paroles-q-label">Q</span> Y a-t-il une manière particulière de préparer ce café pour en tirer le meilleur ?</div>
+                        <div class="paroles-answer">Pour ce café et pour tous les autres — quel que soit le café, la façon de le préparer est importante. Je suis un adepte des cafés en infusion : c'est-à-dire qu'on met de l'eau sur du café moulu et on attend que le café rende son goût. Les méthodes d'infusion, c'est le filtre, la cafetière à piston. Mais il y a une méthode qu'on appelle slow coffee : une percolation lente et une infusion assez longue. On a une vraie infusion, pas de mare résiduelle et surtout l'avantage d'une aération du café — le réceptacle ressemble d'ailleurs à une carafe à décanter le vin, justement pour que le café prenne toutes ses saveurs. La French Press et le slow coffee permettent vraiment d'avoir un nez très aéré et des notes qu'on ne peut pas trouver à l'expresso.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paroles-interview" id="pint-nk4">
+                <div class="paroles-int-header" onclick="toggleParolesInt('pint-nk4')">
+                    <div class="paroles-avatar av-expert" style="width:46px;height:46px;font-size:13px;">NK</div>
+                    <div>
+                        <div class="paroles-int-name">Ce café a-t-il un avenir ?</div>
+                        <div class="paroles-int-role">Industrie, artisanat et survie d'une filière</div>
+                    </div>
+                    <span class="paroles-int-toggle">+</span>
+                </div>
+                <div class="paroles-int-body">
+                    <div class="paroles-qa">
+                        <div class="paroles-question"><span class="paroles-q-label">Q</span> Si on retirait la rareté du produit, vaut-il vraiment le coup ?</div>
+                        <div class="paroles-answer">Il vaut la peine d'être goûté. Il est cher parce qu'il est rare, il est rare parce que la production devrait être très limitée — on ne doit pas industrialiser cette production. Il y a des fermes qui ont industrialisé ce genre de production : ça devrait passer sous l'article 214. Le Kopi Luwak c'est un café de qualité supérieure parce que le tri après récolte est un vrai tri manuel. Un café à petit prix dans ce cas, ça veut dire que les ouvriers agricoles ne sont pas payés correctement.</div>
+                    </div>
+                    <div class="paroles-qa">
+                        <div class="paroles-question"><span class="paroles-q-label">Q</span> Le Kopi Luwak continuera-t-il à avoir une place dans l'industrie à l'avenir ?</div>
+                        <div class="paroles-answer">Dans l'industrie, jamais — ce n'est pas un café d'industrie. Un café industriel est torréfié par ordinateur ; le Kopi Luwak mérite une torréfaction particulière faite par un vrai torréfacteur. Est-ce un café qui va survivre ? Je n'ai pas de réponse. D'une part, l'exploitation des civettes en cage nuit énormément à l'image du café. D'autre part, si on devait en consommer plus, il faudrait d'autres fermes d'exploitation — autant perdre le petit marché qu'on a aujourd'hui plutôt que de le dénaturer.</div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
-        <div class="card">
-            <h3>Perspective des Scientifiques</h3>
-            <p>Les biologistes et vétérinaires affirment que les civettes en captivité présentent des signes mesurables de stress et d'abnormalités comportementales. Ils soulignent également que l'unicité du goût du Kopi Luwak pourrait ne pas être strictement liée à la digestion par les civettes, mais plutôt à la sélection naturelle des fruits les plus mûrs.</p>
-        </div>
-    </div>
+    </div><!-- /container -->
 
+    <!--Footer-->
     <footer>
         <p><strong>Projet académique | Semestre 6 | Cartographie des Controverses</strong></p>
-        <p style="margin-top: 1rem; font-size: 0.9rem;">© 2026 - Site créé pour explorer les multiples perspectives d'une controverse</p>
+        <p>© 2026 - Le marché du Kopi Luwak</p>
     </footer>
 
+    <script>
+        function showParolesSection(name, btn) {
+            document.querySelectorAll('.paroles-section').forEach(s => s.classList.remove('visible'));
+            document.querySelectorAll('.paroles-tab').forEach(t => t.classList.remove('active'));
+            document.getElementById('psec-' + name).classList.add('visible');
+            btn.classList.add('active');
+        }
+
+        function toggleParolesInt(id) {
+            document.getElementById(id).classList.toggle('open');
+        }
+    </script>
 
 </body>
 </html>
