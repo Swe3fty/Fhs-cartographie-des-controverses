@@ -6,12 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paroles de Terrain - Kopi Luwak</title>
 
+    <!--Image d'icone du site-->
     <link rel="icon" type="image/png" href="/img/favicon.png">
 
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,600&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Crimson+Text:wght@400;600&display=swap"rel="stylesheet">    
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="paroles.css">
     <script src="script.js" defer></script>
+    <script src="paroles.js" defer></script>
 </head>
 
 <body>
@@ -24,9 +26,7 @@
     <header>
         <div class="header-container">
             <div class="logo-section">
-                <div class="logo-left"></div>
                 <div class="logo">Les civettes et le<span> Kopi Luwak</span></div>
-                <div class="logo-right"></div>
             </div>
             <nav>
                 <a href="index.html" class="nav-link">Accueil</a>
@@ -48,26 +48,29 @@
         <div class="paroles-tabs">
             <button class="paroles-tab" onclick="showParolesSection('producteur', this)">Producteur indonésien</button>
             <button class="paroles-tab" onclick="showParolesSection('torrefacteur', this)">Naoushad Karim — Torréfacteur</button>
+            <button class="paroles-tab" onclick="showParolesSection('consommatrice', this)">Eriane — Consommatrice</button>
+            <button class="paroles-tab" onclick="showParolesSection('benoit', this)">Benoît — Consommateur</button>
             <button class="paroles-tab" onclick="showParolesSection('citations', this)">Citations clés</button>
         </div>
 
 
         <div class="card">
-            <h3>Nous avons eu la chance d'avoir eu des échanges avec un producteur, un torréfacteur et des consommateurs. Avec ces échanges, nous avons décidé de vous proposer une page dédiée à leurs témoignages, afin de donner voix aux différents acteurs de cette controverse et d'illustrer concrètement les tensions qui la traversent.</h3>
+            <h3>Nous avons eu la chance d'avoir eu des échanges avec un producteur, un torréfacteur et des consommateurs. <br> Avec ces échanges, nous avons décidé de vous proposer une page dédiée à leurs témoignages, afin de donner voix aux différents acteurs de cette controverse et d'illustrer concrètement les tensions qui la traversent.</h3>
             <br>
         </div>
+
         <!-- ===== SECTION : CITATIONS ===== -->
         <div class="paroles-section" id="psec-citations">
 
             <div class="paroles-section-title">Extraits marquants de nos interviews</div>
 
             <div class="paroles-intro-box">
-                Ces citations sont tirées des deux interviews que nous avons menées : un producteur indonésien (anonyme) impliqué dans la filière depuis plusieurs générations, et Naoushad Karim, torréfacteur à Lille depuis 2002, 4e génération d'une famille de professionnels du café.
+                Ces citations sont tirées des quatre interviews que nous avons menées : un producteur indonésien anonyme, Naoushad Karim torréfacteur à Lille, Eriane et Benoît Barthes, deux consommateurs ayant goûté le Kopi Luwak à Bali.
             </div>
 
             <div class="paroles-quote-card">
                 <span class="paroles-quote-mark">&ldquo;</span>
-                <p class="paroles-quote-text">Le Kopi Luwak authentique, issu de la nature, ne représente qu'une infime fraction du marché. C'est précisément cet écart entre production réelle et demande mondiale qui a conduit à la généralisation de l'élevage intensif : c'est le seul moyen de produire les volumes exigés par les distributeurs internationaux.</p>
+                <p class="paroles-quote-text">Le Kopi Luwak authentique, issu de la nature, ne représente qu'une infime fraction du marché. C'est précisément cet écart qui a conduit à la généralisation de l'élevage intensif : c'est le seul moyen de produire les volumes exigés par les distributeurs internationaux.</p>
                 <div class="paroles-quote-meta">
                     <div class="paroles-avatar av-farmer">PI</div>
                     <div>
@@ -80,25 +83,12 @@
 
             <div class="paroles-quote-card">
                 <span class="paroles-quote-mark">&ldquo;</span>
-                <p class="paroles-quote-text">En captivité, la civette perd sa capacité de sélection des cerises les plus mûres. C'est pourquoi le Kopi Luwak d'élevage a souvent un goût moins raffiné que les grains issus de la nature — la civette sauvage est une véritable connaisseuse.</p>
-                <div class="paroles-quote-meta">
-                    <div class="paroles-avatar av-farmer">PI</div>
-                    <div>
-                        <div class="paroles-meta-name">Producteur indonésien (anonyme)</div>
-                        <div class="paroles-meta-role">Filière Kopi Luwak, Indonésie</div>
-                    </div>
-                    <span class="paroles-tag tag-science">Science &amp; goût</span>
-                </div>
-            </div>
-
-            <div class="paroles-quote-card">
-                <span class="paroles-quote-mark">&ldquo;</span>
-                <p class="paroles-quote-text">J'ai jamais voulu travailler du café Kopi Luwak parce qu'il y avait beaucoup d'informations sur la maltraitance des civettes. Depuis fin 2025, j'ai trouvé une ferme en Indonésie qui garantit par écrit que les civettes sont en liberté, avec une garantie de l'État indonésien.</p>
+                <p class="paroles-quote-text">J'ai jamais voulu travailler du café Kopi Luwak à cause de la maltraitance des civettes. Depuis fin 2025, j'ai trouvé une ferme en Indonésie qui garantit par écrit que les civettes sont en liberté avec une garantie de l'État indonésien.</p>
                 <div class="paroles-quote-meta">
                     <div class="paroles-avatar av-expert">NK</div>
                     <div>
                         <div class="paroles-meta-name">Naoushad Karim</div>
-                        <div class="paroles-meta-role">Torréfacteur — Lille, France (depuis 2002)</div>
+                        <div class="paroles-meta-role">Torréfacteur — Lille, France</div>
                     </div>
                     <span class="paroles-tag tag-welfare">Bien-être animal</span>
                 </div>
@@ -106,7 +96,7 @@
 
             <div class="paroles-quote-card">
                 <span class="paroles-quote-mark">&ldquo;</span>
-                <p class="paroles-quote-text">Ce n'est pas forcément la qualité, c'est vraiment la rareté qui fait le prix. Ça vaut la peine de le goûter au moins une fois si on aime le café pour se faire sa propre opinion.</p>
+                <p class="paroles-quote-text">Ce n'est pas forcément la qualité, c'est vraiment la rareté qui fait le prix. Ça ne doit pas être un café à petit prix parce que ça voudrait dire que les ouvriers agricoles ne sont pas payés correctement.</p>
                 <div class="paroles-quote-meta">
                     <div class="paroles-avatar av-expert">NK</div>
                     <div>
@@ -119,14 +109,53 @@
 
             <div class="paroles-quote-card">
                 <span class="paroles-quote-mark">&ldquo;</span>
-                <p class="paroles-quote-text">Une tasse peut coûter 50 dollars à Londres ou Paris, alors que l'agriculteur ne touche qu'une fraction de cette somme. Je crois que le commerce direct est la solution : lorsque nous vendons directement aux torréfacteurs, nous conservons une plus grande partie de la valeur et pouvons prouver nos normes éthiques.</p>
+                <p class="paroles-quote-text">Ils montrent ce qu'ils veulent montrer aux visiteurs ce n'est pas forcément ce qui se passe dans la réalité. Maintenant que je sais la souffrance animale que ça a engendré, je n'en parlerais plus avec autant d'engouement.</p>
                 <div class="paroles-quote-meta">
-                    <div class="paroles-avatar av-farmer">PI</div>
+                    <div class="paroles-avatar av-consumer">EV</div>
                     <div>
-                        <div class="paroles-meta-name">Producteur indonésien (anonyme)</div>
-                        <div class="paroles-meta-role">Filière Kopi Luwak, Indonésie</div>
+                        <div class="paroles-meta-name">Eriane</div>
+                        <div class="paroles-meta-role">Consommatrice — a goûté le café à 14 ans, en voyage</div>
                     </div>
-                    <span class="paroles-tag tag-economic">Économique</span>
+                    <span class="paroles-tag tag-welfare">Bien-être animal</span>
+                </div>
+            </div>
+
+            <div class="paroles-quote-card">
+                <span class="paroles-quote-mark">&ldquo;</span>
+                <p class="paroles-quote-text">C'est un cercle vicieux. S'il n'y avait pas de production, il n'y aurait pas de consommateur mais s'il n'y avait pas de consommateur, ils continueraient encore à produire puisqu'il y aura toujours un client. Rejeter la faute sur l'un ou sur l'autre, c'est un peu facile.</p>
+                <div class="paroles-quote-meta">
+                    <div class="paroles-avatar av-consumer">EV</div>
+                    <div>
+                        <div class="paroles-meta-name">Eriane</div>
+                        <div class="paroles-meta-role">Consommatrice</div>
+                    </div>
+                    <span class="paroles-tag tag-market">Marché</span>
+                </div>
+            </div>
+
+            <div class="paroles-quote-card">
+                <span class="paroles-quote-mark">&ldquo;</span>
+                <p class="paroles-quote-text">Même sur la production que j'ai visitée, qui prônait le respect de la vie animale, j'ai vu des civettes en cage individuelle qui avaient l'air très malheureuses.</p>
+                <div class="paroles-quote-meta">
+                    <div class="paroles-avatar av-consumer">BB</div>
+                    <div>
+                        <div class="paroles-meta-name">Benoît Barthes</div>
+                        <div class="paroles-meta-role">Consommateur — étudiant ISEN Brest</div>
+                    </div>
+                    <span class="paroles-tag tag-welfare">Bien-être animal</span>
+                </div>
+            </div>
+
+            <div class="paroles-quote-card">
+                <span class="paroles-quote-mark">&ldquo;</span>
+                <p class="paroles-quote-text">Si on n'a pas la connaissance de la provenance du café, à titre personnel je préférerais ne pas en consommer c'est-à-dire ne pas encourager un mode de production qui ne tient pas compte du respect animal.</p>
+                <div class="paroles-quote-meta">
+                    <div class="paroles-avatar av-consumer">BB</div>
+                    <div>
+                        <div class="paroles-meta-name">Benoît Barthes</div>
+                        <div class="paroles-meta-role">Consommateur — étudiant ISEN Brest</div>
+                    </div>
+                    <span class="paroles-tag tag-welfare">Bien-être animal</span>
                 </div>
             </div>
 
@@ -235,7 +264,7 @@
             <div class="paroles-section-title">Interview — Naoushad Karim, Torréfacteur</div>
 
             <div class="paroles-intro-box">
-                Entretien réalisé le <strong>11 mars 2026</strong> par Salim Junior Pedro Nounagnon et son équipe. Naoushad Karim est torréfacteur à Lille depuis 2002, 4e génération d'une famille du café (son arrière-grand-père était ouvrier agricole dans des plantations, son grand-père exportateur de café vert de Madagascar). Il travaille aujourd'hui avec une trentaine d'origines différentes et commercialise du Kopi Luwak depuis fin 2025.
+                Entretien réalisé le <strong>11 mars 2026</strong> par Salim et Gaspard, Naoushad Karim est torréfacteur à Lille depuis 2002, 4e génération d'une famille du café (son arrière-grand-père était ouvrier agricole dans des plantations, son grand-père exportateur de café vert de Madagascar). Il travaille aujourd'hui avec une trentaine d'origines différentes et commercialise du Kopi Luwak depuis fin 2025.
             </div>
 
             <div class="paroles-interview open" id="pint-nk1">
@@ -250,7 +279,7 @@
                 <div class="paroles-int-body">
                     <div class="paroles-qa">
                         <div class="paroles-question"><span class="paroles-q-label">Q</span> Depuis quand proposez-vous du Kopi Luwak, et pourquoi ne l'aviez-vous pas fait avant ?</div>
-                        <div class="paroles-answer">Depuis la fin de l'année dernière, depuis fin 2025. J'ai jamais voulu travailler du café Kopi Luwak parce qu'il y avait beaucoup d'informations sur la maltraitance des civettes et ça ne me plaisait pas — en plus du prix qui est assez élevé, mais le prix c'était pas un frein, c'était vraiment cette orientation maltraitance. Pourquoi j'ai commencé depuis fin 2025 ? C'est que j'ai trouvé une ferme en Indonésie qui garantit — c'est une garantie écrite — que les civettes sont en liberté, que ce sont des civettes sauvages. Et ils ont une garantie de l'État indonésien.</div>
+                        <div class="paroles-answer">Depuis la fin de l'année dernière, depuis fin 2025. J'ai jamais voulu travailler du café Kopi Luwak parce qu'il y avait beaucoup d'informations sur la maltraitance des civettes et ça ne me plaisait pas en plus du prix qui est assez élevé, mais le prix c'était pas un frein, c'était vraiment cette orientation maltraitance. Pourquoi j'ai commencé depuis fin 2025 ? C'est que j'ai trouvé une ferme en Indonésie qui garantit c'est une garantie écrite que les civettes sont en liberté, que ce sont des civettes sauvages. Et ils ont une garantie de l'État indonésien.</div>
                     </div>
                     <div class="paroles-qa">
                         <div class="paroles-question"><span class="paroles-q-label">Q</span> Comment êtes-vous entré en contact avec ce producteur ?</div>
@@ -275,7 +304,7 @@
                     </div>
                     <div class="paroles-qa">
                         <div class="paroles-question"><span class="paroles-q-label">Q</span> Comment vos clients réagissent-ils face à ce café ?</div>
-                        <div class="paroles-answer">C'est un café cadeau. Comme c'est un café cadeau, c'est un café qu'on offre ou qu'on s'offre de temps en temps — au vu du prix, y a très peu de gens qui vont se dire « je vais acheter un café à 40€ les 125 g ». La consommation moyenne d'un foyer c'est 250 g par semaine, donc ça ferait un budget café de 80€, ce qui est énorme. Donc on est sur un café qu'on s'offre, qu'on offre à ses convives. C'est se faire plaisir — comme une belle pièce de boucher de temps en temps.</div>
+                        <div class="paroles-answer">C'est un café cadeau. Comme c'est un café cadeau, c'est un café qu'on offre ou qu'on s'offre de temps en temps au vu du prix, y a très peu de gens qui vont se dire « je vais acheter un café à 40€ les 125 g ». La consommation moyenne d'un foyer c'est 250 g par semaine, donc ça ferait un budget café de 80€, ce qui est énorme. Donc on est sur un café qu'on s'offre, qu'on offre à ses convives. C'est se faire plaisir comme une belle pièce de boucher de temps en temps.</div>
                     </div>
                 </div>
             </div>
@@ -285,14 +314,14 @@
                     <div class="paroles-avatar av-expert" style="width:46px;height:46px;font-size:13px;">NK</div>
                     <div>
                         <div class="paroles-int-name">La préparation, un facteur clé</div>
-                        <div class="paroles-int-role">Slow coffee, French press, espresso — laquelle choisir ?</div>
+                        <div class="paroles-int-role">Slow coffee, French press, espresso, lequelle choisir ?</div>
                     </div>
                     <span class="paroles-int-toggle">+</span>
                 </div>
                 <div class="paroles-int-body">
                     <div class="paroles-qa">
                         <div class="paroles-question"><span class="paroles-q-label">Q</span> Y a-t-il une manière particulière de préparer ce café pour en tirer le meilleur ?</div>
-                        <div class="paroles-answer">Pour ce café et pour tous les autres — quel que soit le café, la façon de le préparer est importante. Je suis un adepte des cafés en infusion : c'est-à-dire qu'on met de l'eau sur du café moulu et on attend que le café rende son goût. Les méthodes d'infusion, c'est le filtre, la cafetière à piston. Mais il y a une méthode qu'on appelle slow coffee : une percolation lente et une infusion assez longue. On a une vraie infusion, pas de mare résiduelle et surtout l'avantage d'une aération du café — le réceptacle ressemble d'ailleurs à une carafe à décanter le vin, justement pour que le café prenne toutes ses saveurs. La French Press et le slow coffee permettent vraiment d'avoir un nez très aéré et des notes qu'on ne peut pas trouver à l'expresso.</div>
+                        <div class="paroles-answer">Pour ce café et pour tous les autres quel que soit le café, la façon de le préparer est importante. Je suis un adepte des cafés en infusion : c'est-à-dire qu'on met de l'eau sur du café moulu et on attend que le café rende son goût. Les méthodes d'infusion, c'est le filtre, la cafetière à piston. Mais il y a une méthode qu'on appelle slow coffee : une percolation lente et une infusion assez longue. On a une vraie infusion, pas de mare résiduelle et surtout l'avantage d'une aération du café — le réceptacle ressemble d'ailleurs à une carafe à décanter le vin, justement pour que le café prenne toutes ses saveurs. La French Press et le slow coffee permettent vraiment d'avoir un nez très aéré et des notes qu'on ne peut pas trouver à l'expresso.</div>
                     </div>
                 </div>
             </div>
@@ -309,37 +338,174 @@
                 <div class="paroles-int-body">
                     <div class="paroles-qa">
                         <div class="paroles-question"><span class="paroles-q-label">Q</span> Si on retirait la rareté du produit, vaut-il vraiment le coup ?</div>
-                        <div class="paroles-answer">Il vaut la peine d'être goûté. Il est cher parce qu'il est rare, il est rare parce que la production devrait être très limitée — on ne doit pas industrialiser cette production. Il y a des fermes qui ont industrialisé ce genre de production : ça devrait passer sous l'article 214. Le Kopi Luwak c'est un café de qualité supérieure parce que le tri après récolte est un vrai tri manuel. Un café à petit prix dans ce cas, ça veut dire que les ouvriers agricoles ne sont pas payés correctement.</div>
+                        <div class="paroles-answer">Il vaut la peine d'être goûté. Il est cher parce qu'il est rare, il est rare parce que la production devrait être très limitée on ne doit pas industrialiser cette production. Il y a des fermes qui ont industrialisé ce genre de production : ça devrait passer sous l'article 214. Le Kopi Luwak c'est un café de qualité supérieure parce que le tri après récolte est un vrai tri manuel. Un café à petit prix dans ce cas, ça veut dire que les ouvriers agricoles ne sont pas payés correctement.</div>
                     </div>
                     <div class="paroles-qa">
                         <div class="paroles-question"><span class="paroles-q-label">Q</span> Le Kopi Luwak continuera-t-il à avoir une place dans l'industrie à l'avenir ?</div>
-                        <div class="paroles-answer">Dans l'industrie, jamais — ce n'est pas un café d'industrie. Un café industriel est torréfié par ordinateur ; le Kopi Luwak mérite une torréfaction particulière faite par un vrai torréfacteur. Est-ce un café qui va survivre ? Je n'ai pas de réponse. D'une part, l'exploitation des civettes en cage nuit énormément à l'image du café. D'autre part, si on devait en consommer plus, il faudrait d'autres fermes d'exploitation — autant perdre le petit marché qu'on a aujourd'hui plutôt que de le dénaturer.</div>
+                        <div class="paroles-answer">Dans l'industrie, jamais ce n'est pas un café d'industrie. Un café industriel est torréfié par ordinateur ; le Kopi Luwak mérite une torréfaction particulière faite par un vrai torréfacteur. Est-ce un café qui va survivre ? Je n'ai pas de réponse. D'une part, l'exploitation des civettes en cage nuit énormément à l'image du café. D'autre part, si on devait en consommer plus, il faudrait d'autres fermes d'exploitation autant perdre le petit marché qu'on a aujourd'hui plutôt que de le dénaturer.</div>
                     </div>
                 </div>
             </div>
 
         </div>
 
-    </div><!-- /container -->
+        <!-- ===== SECTION : CONSOMMATRICE ===== -->
+        <div class="paroles-section" id="psec-consommatrice">
+
+            <div class="paroles-section-title">Interview — Eriane, Consommatrice</div>
+
+            <div class="paroles-intro-box">
+                Eriane a découvert le Kopi Luwak à l'âge de 14-15 ans lors d'un voyage en famille. Elle nous livre un témoignage sincère sur son expérience gustative, et sa prise de conscience progressive sur les enjeux éthiques de cette production.
+            </div>
+
+            <div class="paroles-interview" id="pint-ev1">
+                <div class="paroles-int-header" onclick="toggleParolesInt('pint-ev1')">
+                    <div class="paroles-avatar av-consumer" style="width:46px;height:46px;font-size:13px;">EV</div>
+                    <div>
+                        <div class="paroles-int-name">L'expérience gustative</div>
+                        <div class="paroles-int-role">Premier contact avec le café — 14 ans, en voyage</div>
+                    </div>
+                    <span class="paroles-int-toggle">+</span>
+                </div>
+                <div class="paroles-int-body">
+                    <div class="paroles-qa">
+                        <div class="paroles-question"><span class="paroles-q-label">Q</span> Comment décririez-vous l'expérience gustative ?</div>
+                        <div class="paroles-answer">Quand j'ai goûté ce café, je l'ai trouvé directement très bon. Il était très fort en bouche c'est forcément un peu spécial de goûter un café aux excréments d'animal mais j'ai bien aimé justement parce qu'il avait un goût fort, sans pour autant avoir un goût bizarre. On peut avoir des appréhensions au départ, mais finalement j'ai trouvé ça très bon. On nous faisait comparer avec un café normal, et c'est là qu'on voit la différence de caractère : il a beaucoup plus de goût.</div>
+                    </div>
+                    <div class="paroles-qa">
+                        <div class="paroles-question"><span class="paroles-q-label">Q</span> Aujourd'hui, si vous aviez l'opportunité de le regoûter, le feriez-vous ?</div>
+                        <div class="paroles-answer">Oui, bien sûr, parce que c'était une très bonne expérience. Et je le conseillerais à certains de le goûter en connaissant le prix, évidemment. Ce serait compliqué de le conseiller pour une consommation de tous les jours parce que c'est vachement cher, mais rien qu'au niveau du goût, oui, je le recommanderais.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paroles-interview" id="pint-ev2">
+                <div class="paroles-int-header" onclick="toggleParolesInt('pint-ev2')">
+                    <div class="paroles-avatar av-consumer" style="width:46px;height:46px;font-size:13px;">EV</div>
+                    <div>
+                        <div class="paroles-int-name">La prise de conscience éthique</div>
+                        <div class="paroles-int-role">Des grandes cages "presque naturelles" à la réalité</div>
+                    </div>
+                    <span class="paroles-int-toggle">+</span>
+                </div>
+                <div class="paroles-int-body">
+                    <div class="paroles-qa">
+                        <div class="paroles-question"><span class="paroles-q-label">Q</span> Étiez-vous consciente des méthodes de production au moment où vous goûtiez ce café ?</div>
+                        <div class="paroles-answer">Pas du tout. Quand on a visité ce centre, les animaux étaient dans de grandes cages, ils couraient partout, ils n'avaient pas l'air d'être maltraités. C'était comme s'ils étaient presque dans la nature. Donc je n'avais aucune conscience de ce qui se passait réellement derrière.</div>
+                    </div>
+                    <div class="paroles-qa">
+                        <div class="paroles-question"><span class="paroles-q-label">Q</span> Avec le recul, les cages ne représentent-elles pas une forme de captivité abusive ?</div>
+                        <div class="paroles-answer">Oui, effectivement. J'étais un peu jeune à ce moment-là on allait souvent au zoo et les animaux étaient aussi dans des cages, donc je ne voyais pas le côté maltraitant. Mais maintenant, après avoir pris du recul, enfermer un animal, peu importe la dimension de la cage, ça peut s'apparenter à une forme de maltraitance.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paroles-interview" id="pint-ev3">
+                <div class="paroles-int-header" onclick="toggleParolesInt('pint-ev3')">
+                    <div class="paroles-avatar av-consumer" style="width:46px;height:46px;font-size:13px;">EV</div>
+                    <div>
+                        <div class="paroles-int-name">Le cercle vicieux de la responsabilité</div>
+                        <div class="paroles-int-role">Consommateur, producteur, importateur, qui est coupable ?</div>
+                    </div>
+                    <span class="paroles-int-toggle">+</span>
+                </div>
+                <div class="paroles-int-body">
+                    <div class="paroles-qa">
+                        <div class="paroles-question"><span class="paroles-q-label">Q</span> Que pensez-vous du cercle où chacun rejette la faute sur l'autre consommateur, producteur, importateur ?</div>
+                        <div class="paroles-answer">C'est un cercle vicieux. S'il n'y avait pas de production, il n'y aurait pas de consommateur mais s'il n'y avait pas de consommateur, il continuerait encore à produire puisqu'il y aura toujours un client. Ça coûte tellement cher que ce sont des clients prestigieux, un cercle restreint mais fidèle. Donc c'est sûr que rejeter la faute sur l'un ou sur l'autre, c'est un peu facile.</div>
+                    </div>
+                    <div class="paroles-qa">
+                        <div class="paroles-question"><span class="paroles-q-label">Q</span> Quelle est votre appréciation de ce café aujourd'hui, maintenant que vous êtes au courant de tout ça ?</div>
+                        <div class="paroles-answer">Maintenant que je suis au courant, je n'y serais peut-être pas allée avec autant d'engouement. Ils montrent ce qu'ils veulent montrer aux visiteurs ce n'est pas forcément ce qui se passe dans la réalité. Donc peut-être que je ne le recommanderais plus de la même façon, en sachant maintenant la souffrance animale que ça a engendré. L'expérience est sympa à vivre tu goûtes un café un peu spécial qui n'existe pas ailleurs dans le monde. Mais ce que ça engendre comme maltraitance, c'est sûr que maintenant que je le sais, mes parents ne seraient peut-être même pas allés dans ce centre.</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- ===== SECTION : BENOÎT ===== -->
+        <div class="paroles-section" id="psec-benoit">
+
+            <div class="paroles-section-title">Interview — Benoît Barthes, Consommateur</div>
+
+            <div class="paroles-intro-box">
+                Benoît Barthes est étudiant à l'ISEN de Brest en troisième année. Il a eu l'occasion de goûter le Kopi Luwak lors d'un voyage à Bali, en Indonésie, et nous livre un témoignage honnête sur son expérience du plaisir gustatif à la prise de conscience éthique.
+            </div>
+
+            <div class="paroles-interview" id="pint-bb1">
+                <div class="paroles-int-header" onclick="toggleParolesInt('pint-bb1')">
+                    <div class="paroles-avatar av-consumer" style="width:46px;height:46px;font-size:13px;">BB</div>
+                    <div>
+                        <div class="paroles-int-name">La sensation gustative</div>
+                        <div class="paroles-int-role">Un non-amateur de café bluffé par le goût</div>
+                    </div>
+                    <span class="paroles-int-toggle">+</span>
+                </div>
+                <div class="paroles-int-body">
+                    <div class="paroles-qa">
+                        <div class="paroles-question"><span class="paroles-q-label">Q</span> Comment décrirais-tu le Kopi Luwak — la sensation au moment où tu l'as goûté ?</div>
+                        <div class="paroles-answer">Je tiens à préciser que je ne suis pas un très grand amateur de café, donc mon ressenti va peut-être être différent. Si je devais le décrire, je dirais que c'est un café assez corsé, avec un goût très prononcé, assez singulier. Je n'avais jamais goûté un café comme celui-là. J'ai eu l'occasion de le goûter mélangé avec de la coco, de la rose, et plein de différentes saveurs et vraiment, le rendu est bluffant.</div>
+                    </div>
+                    <div class="paroles-qa">
+                        <div class="paroles-question"><span class="paroles-q-label">Q</span> Est-ce un café que tu pourrais recommander ?</div>
+                        <div class="paroles-answer">Sincèrement, oui. J'ai beaucoup apprécié, même en tant que personne qui n'est pas amatrice de café. Plus particulièrement dans les mélanges, parce qu'il y avait du sucre et du lait pour adoucir le côté corsé. Je pars du principe que si j'ai réussi à apprécier certaines saveurs, je pense qu'il y en a qui pourraient plaire à tout le monde.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paroles-interview" id="pint-bb2">
+                <div class="paroles-int-header" onclick="toggleParolesInt('pint-bb2')">
+                    <div class="paroles-avatar av-consumer" style="width:46px;height:46px;font-size:13px;">BB</div>
+                    <div>
+                        <div class="paroles-int-name">La découverte du processus</div>
+                        <div class="paroles-int-role">Une visite guidée qui soulève des questions</div>
+                    </div>
+                    <span class="paroles-int-toggle">+</span>
+                </div>
+                <div class="paroles-int-body">
+                    <div class="paroles-qa">
+                        <div class="paroles-question"><span class="paroles-q-label">Q</span> Étais-tu au courant du processus de fabrication les grains récoltés dans les déjections de civettes ?</div>
+                        <div class="paroles-answer">J'avais vaguement entendu parler de ce café un peu de légende, produit à base d'excréments de civettes, mais je ne m'étais pas renseigné du tout. Quand je suis arrivé à Bali, on m'a recommandé d'aller le goûter j'étais curieux. Le fait que ce soient des graines récoltées dans du caca a contribué à ma curiosité, parce que ça peut en dégoûter certains, mais il faut rappeler que les graines sont nettoyées et torréfiées avant d'en faire du café. Donc ça ne m'a pas dégoûté, mais ça m'a intrigué.</div>
+                    </div>
+                    <div class="paroles-qa">
+                        <div class="paroles-question"><span class="paroles-q-label">Q</span> Qu'as-tu retenu de la visite guidée sur le processus de fabrication ?</div>
+                        <div class="paroles-answer">Ils ne vont pas enfermer les civettes parce que le stress influerait sur les enzymes contenues dans leur estomac ce sont ces enzymes qui donnent une saveur si singulière au café. Ce qu'ils font plutôt, c'est marquer les arbres vers lesquels les civettes sauvages vont aller, pour ensuite récupérer leurs excréments dans les zones environnantes, puis les laver, les torréfier à très haute température et moudre les grains.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paroles-interview" id="pint-bb3">
+                <div class="paroles-int-header" onclick="toggleParolesInt('pint-bb3')">
+                    <div class="paroles-avatar av-consumer" style="width:46px;height:46px;font-size:13px;">BB</div>
+                    <div>
+                        <div class="paroles-int-name">La réalité de l'élevage intensif</div>
+                        <div class="paroles-int-role">Des civettes en cage individuelle qui avaient l'air très malheureuses</div>
+                    </div>
+                    <span class="paroles-int-toggle">+</span>
+                </div>
+                <div class="paroles-int-body">
+                    <div class="paroles-qa">
+                        <div class="paroles-question"><span class="paroles-q-label">Q</span> S'il existe des élevages intensifs où les civettes sont enfermées et gavées de grains, qu'en penses-tu ?</div>
+                        <div class="paroles-answer">C'est tout à fait inacceptable. Je n'étais pas du tout au courant de ces pratiques avant que vous m'en parliez. C'est de l'exploitation animale les conditions sanitaires doivent être probablement déplorables, et la condition animale aussi. Et je tiens à noter que même sur la production que j'ai visitée, qui prônait produire dans le respect de la vie animale, j'ai vu des civettes en cage individuelle qui avaient l'air très malheureuses.</div>
+                    </div>
+                    <div class="paroles-qa">
+                        <div class="paroles-question"><span class="paroles-q-label">Q</span> Est-ce que connaître cette réalité change ta perception de ce café ?</div>
+                        <div class="paroles-answer">Bien entendu. Tout dépend de la production dans laquelle on se fournit. Mais de manière générale, si on n'a pas la connaissance de la provenance du café, à titre personnel je préférerais ne pas en consommer c'est-à-dire ne pas encourager un mode de production qui ne tient pas compte du respect animal.</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+
+    </div>
 
     <!--Footer-->
     <footer>
         <p><strong>Projet académique | Semestre 6 | Cartographie des Controverses</strong></p>
         <p>© 2026 - Le marché du Kopi Luwak</p>
     </footer>
-
-    <script>
-        function showParolesSection(name, btn) {
-            document.querySelectorAll('.paroles-section').forEach(s => s.classList.remove('visible'));
-            document.querySelectorAll('.paroles-tab').forEach(t => t.classList.remove('active'));
-            document.getElementById('psec-' + name).classList.add('visible');
-            btn.classList.add('active');
-        }
-
-        function toggleParolesInt(id) {
-            document.getElementById(id).classList.toggle('open');
-        }
-    </script>
 
 </body>
 </html>

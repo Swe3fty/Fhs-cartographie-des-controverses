@@ -5,6 +5,7 @@
     box-sizing: border-box;
 }
 
+
 html, body {
     width: 100%;
     margin: 0;
@@ -122,16 +123,6 @@ header {
     gap: var(--spacing-lg);
 }
 
-.logo-left {
-    flex-shrink: 0;
-}
-
-.logo-left img {
-    height: 80px;
-    width: auto;
-    object-fit: contain;
-    filter: brightness(1.1);
-}
 
 .logo {
     font-family: 'Fraunces', serif;
@@ -146,16 +137,6 @@ header {
     color: var(--light-brown);
 }
 
-.logo-right {
-    flex-shrink: 0;
-}
-
-.logo-right img {
-    height: 80px;
-    width: auto;
-    object-fit: contain;
-    filter: brightness(1.1);
-}
 
 nav {
     display: flex;
@@ -182,6 +163,8 @@ nav a:hover, nav a.active {
     background-color: var(--light-brown);
     color: var(--dark-brown);
 }
+
+
 
 /* ========== MAIN CONTAINERS ========== */
 .container {

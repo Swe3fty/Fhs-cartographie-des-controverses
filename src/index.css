@@ -96,7 +96,7 @@
     animation: bounce 2s infinite;
     transition: color 0.3s ease;
     display: inline-block;
-}
+}   
 
 .arrow-down-link:hover {
     color: var(--light-brown);
