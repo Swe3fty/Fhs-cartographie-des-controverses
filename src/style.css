@@ -474,6 +474,10 @@ footer a:hover {
 
 /* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
+    header {
+        position: fixed;
+    }
+    
     .intro-section {
         grid-template-columns: 1fr;
         gap: 1.5rem;

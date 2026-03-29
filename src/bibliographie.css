@@ -1,0 +1,93 @@
+/* ========== BIBLIOGRAPHIE SOIGNÉE ========== */
+
+/* Container de la source */
+.bibliography-item {
+    background: white;
+    padding: var(--spacing-md) var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+    border-radius: var(--radius-lg);
+    border-left: 6px solid var(--taupe);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Effet au survol */
+.bibliography-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-left-color: var(--dark-burgundy);
+}
+
+/* Titre de la source (Strong) */
+.bibliography-item strong {
+    font-family: 'Fraunces', serif;
+    font-size: 1.1rem;
+    color: var(--dark-brown);
+    display: block;
+    margin-bottom: 4px;
+}
+
+/* Stylisation du lien */
+.bibliography-item a {
+    color: var(--accent-green);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: inline-block;
+    margin-bottom: 8px;
+    border-bottom: 1px dashed transparent;
+    transition: all 0.2s ease;
+}
+
+.bibliography-item a:hover {
+    color: var(--dark-burgundy);
+    border-bottom-color: var(--dark-burgundy);
+}
+
+/* Description (Italique) */
+.bibliography-item em {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--taupe);
+    font-style: normal;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 5px;
+}
+
+/* Texte descriptif final */
+.bibliography-item {
+    line-height: 1.4;
+    color: var(--text-dark);
+}
+
+/* Badge de catégorie (Si vous utilisez le HTML suggéré plus haut) */
+.source-tag {
+    float: right;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 20px;
+    background: var(--light-bg);
+    color: var(--medium-brown);
+    border: 1px solid var(--taupe);
+    text-transform: uppercase;
+}
+
+/* Couleurs alternées pour le rythme visuel */
+.bibliography-item:nth-child(even) {
+    border-left-color: var(--accent-gold);
+}
+
+.bibliography-item:nth-child(3n) {
+    border-left-color: var(--accent-green);
+}
+
+/* Espacement entre les titres H2 et la liste */
+h2 {
+    margin-top: var(--spacing-xxl);
+    padding-bottom: var(--spacing-xs);
+    border-bottom: 2px solid var(--light-bg);
+}
